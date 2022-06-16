@@ -266,7 +266,7 @@
     <EmbeddedResource Include="UI_Layer\TicketUControl.resx">
       <DependentUpon>TicketUControl.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ClassDiagram1.cd" />
+    <None Include="ADO_CinemaManagement.cd" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\RevenueDataSet.datasource" />
     <None Include="Properties\Settings.settings">

@@ -154,7 +154,7 @@
       <FileName>DataObjects\Ve.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="QuanLyRapChieuPhim_EF.DBConnect.DBConnection">
+  <Class Name="QuanLyRapChieuPhim_EF.DBConnect.DBConnection" Collapsed="true">
     <Position X="12.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAACAAAAAAIAAAAAAAAABACAAAAABAAA=</HashCode>
@@ -177,6 +177,20 @@
   </Class>
   <Class Name="QuanLyRapChieuPhim_EF.RevenueDataSet" Collapsed="true">
     <Position X="7.5" Y="4.5" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="QuanLyRapChieuPhim_EF.RevenueDataSet.DoanhThuRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="QuanLyRapChieuPhim_EF.RevenueDataSet.DoanhThuDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="QuanLyRapChieuPhim_EF.RevenueDataSet.DoanhThuRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="QuanLyRapChieuPhim_EF.RevenueDataSet.DoanhThuRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+    </NestedTypes>
     <TypeIdentifier>
       <HashCode>QAAIAAAAAwAAAAJABAAAQAAAAAgCYBgAAAAAAAEABBA=</HashCode>
     </TypeIdentifier>
@@ -215,15 +229,6 @@
   </Class>
   <Class Name="QuanLyRapChieuPhim_EF.RevenueDataSetTableAdapters.TableAdapterManager" Collapsed="true">
     <Position X="5.75" Y="5.5" Width="1.5" />
-    <NestedTypes>
-      <Enum Name="QuanLyRapChieuPhim_EF.RevenueDataSetTableAdapters.TableAdapterManager.UpdateOrderOption" Collapsed="true">
-        <TypeIdentifier />
-      </Enum>
-      <Class Name="QuanLyRapChieuPhim_EF.RevenueDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer" Collapsed="true">
-        <TypeIdentifier />
-        <Lollipop Position="0.2" />
-      </Class>
-    </NestedTypes>
     <TypeIdentifier>
       <HashCode>AQAAACAAAABABAEBAAAAMAAgAAACgAAAAAQAAAAABAQ=</HashCode>
     </TypeIdentifier>
@@ -347,22 +352,22 @@
       <FileName>UI_Layer\TicketUControl.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Enum Name="QuanLyRapChieuPhim_EF.Enum.ACCOUNT_ROLE" Collapsed="true">
-    <Position X="4" Y="6.5" Width="1.5" />
+  <Enum Name="QuanLyRapChieuPhim_EF.Enum.ACCOUNT_ROLE">
+    <Position X="7.25" Y="12.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAQAAAAAAAAAAAAA=</HashCode>
       <FileName>Enum\ACCOUNT_ROLE.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="QuanLyRapChieuPhim_EF.Enum.BONUS_POINT" Collapsed="true">
-    <Position X="5.75" Y="6.5" Width="1.5" />
+  <Enum Name="QuanLyRapChieuPhim_EF.Enum.BONUS_POINT">
+    <Position X="9" Y="12.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enum\BONUS_POINT.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="QuanLyRapChieuPhim_EF.Enum.SALE" Collapsed="true">
-    <Position X="7.5" Y="6.5" Width="1.5" />
+  <Enum Name="QuanLyRapChieuPhim_EF.Enum.SALE">
+    <Position X="10.75" Y="12.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enum\SALE.cs</FileName>

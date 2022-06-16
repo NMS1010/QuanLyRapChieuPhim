@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.showTimeDataGridView = new System.Windows.Forms.DataGridView();
             this.MaSuatChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -130,9 +130,9 @@
             // NgayChieu
             // 
             this.NgayChieu.DataPropertyName = "NgayChieu";
-            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle1.NullValue = null;
-            this.NgayChieu.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle3.NullValue = null;
+            this.NgayChieu.DefaultCellStyle = dataGridViewCellStyle3;
             this.NgayChieu.HeaderText = "Ngày chiếu";
             this.NgayChieu.Name = "NgayChieu";
             this.NgayChieu.ReadOnly = true;
@@ -141,9 +141,9 @@
             // GioChieu
             // 
             this.GioChieu.DataPropertyName = "GioChieu";
-            dataGridViewCellStyle2.Format = "t";
-            dataGridViewCellStyle2.NullValue = null;
-            this.GioChieu.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Format = "t";
+            dataGridViewCellStyle4.NullValue = null;
+            this.GioChieu.DefaultCellStyle = dataGridViewCellStyle4;
             this.GioChieu.HeaderText = "Giờ chiếu";
             this.GioChieu.Name = "GioChieu";
             this.GioChieu.ReadOnly = true;

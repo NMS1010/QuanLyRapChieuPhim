@@ -59,7 +59,6 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer revenueReportView;
-        private System.Windows.Forms.BindingSource doanhThuBindingSource;
         private RevenueDataSet revenueDataSet;
         private RevenueDataSetTableAdapters.DoanhThuTableAdapter doanhThuTableAdapter;
     }

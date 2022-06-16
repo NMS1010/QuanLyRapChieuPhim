@@ -71,7 +71,6 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
             using (CinemaManagementModel ctx = new CinemaManagementModel())
             {
                 IList<BoPhim> filmInfo = (from a in ctx.BoPhims
-                                          where a.TrangThai == 1
                                           select a).ToList();
                 foreach (var f in filmInfo)
                 {

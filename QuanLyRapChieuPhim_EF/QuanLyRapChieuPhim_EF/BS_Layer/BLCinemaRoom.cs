@@ -63,7 +63,6 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
             using (CinemaManagementModel ctx = new CinemaManagementModel())
             {
                 IList<PhongChieu> rooms = (from a in ctx.PhongChieux
-                                           where a.TinhTrang == 1
                                            select a).ToList();
                 foreach (var c in rooms)
                 {

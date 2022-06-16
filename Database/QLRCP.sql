@@ -1,4 +1,4 @@
-
+﻿
 SET QUOTED_IDENTIFIER OFF;
 GO
 CREATE DATABASE QuanLyRapChieuPhim
@@ -334,3 +334,38 @@ GO
 --- Insert some values
 
 insert into TaiKhoan (TenTaiKhoan, MatKhau, LoaiTaiKhoan) values("admin", 'admin', 1)
+
+insert into DinhDangManHinh values('MH01', N'IMAX',85000);
+insert into DinhDangManHinh values('MH02', N'3D',80000);
+insert into DinhDangManHinh values('MH03', N'2D',75000);
+insert into DinhDangManHinh values('MH04', N'4D',90000);
+
+insert into TheLoai values(N'TL01', N'Hành động');
+insert into TheLoai values(N'TL02', N'Khoa học');
+insert into TheLoai values(N'TL03', N'Hài hước');
+insert into TheLoai values(N'TL04', N'Tình cảm');
+
+insert into PhongChieu values('PC01', N'CINEMA01',140, 1, 10,14, 'MH01' );
+insert into PhongChieu values('PC02', N'CINEMA02',154, 1, 11,14, 'MH02' );
+insert into PhongChieu values('PC03', N'CINEMA03',168, 1, 12,14, 'MH03' );
+insert into PhongChieu values('PC04', N'CINEMA04',182, 1, 13,14, 'MH04' );
+
+insert into BoPhim values('MP01',N'Avenger 2',N'Age Of Ultron','150','6/10/2022 12:00:00 AM','7/16/2022 12:00:00 AM','2018',N'Russo',N'Marvel', 1);
+insert into BoPhim values('MP02',N'Avenger 3',N'Infinity War','160','6/1/2022 12:00:00 AM','7/31/2022 12:00:00 AM','2019',N'Russo',N'Marvel', 1);
+insert into BoPhim values('MP03',N'Doctor Strange 2',N'Đa vũ trụ điên loạn','120','5/7/2022 12:00:00 AM','7/1/2022 12:00:00 AM','2022',N'Sam',N'Marvel', 1);
+
+insert into BoPhim_TheLoai values('MP01', 'TL01')
+insert into BoPhim_TheLoai values('MP01', 'TL02')
+insert into BoPhim_TheLoai values('MP02', 'TL01')
+insert into BoPhim_TheLoai values('MP02', 'TL02')
+insert into BoPhim_TheLoai values('MP03', 'TL01')
+insert into BoPhim_TheLoai values('MP03', 'TL02')
+insert into BoPhim_TheLoai values('MP03', 'TL03')
+insert into BoPhim_TheLoai values('MP03', 'TL04')
+
+insert into SuatChieu values('SC01','6/17/2022 11:59:25 PM', 1,'MP01','PC01');
+insert into SuatChieu values('SC02','6/18/2022 11:59:25 PM', 1,'MP02','PC02');
+insert into SuatChieu values('SC03','6/25/2022 11:59:25 PM', 1,'MP03','PC03');
+
+insert into KhachHang (Hoten, NgaySinh, GioiTinh, DiaChi, SoDienThoai, DiemTichLuy) values( N'Nguyễn Minh Sơn','10/10/2002 12:00:00 AM', N'Nam', N'Khánh Hoà','0354964840', 0);
+insert into NhanVien (Hoten, NgaySinh, GioiTinh, DiaChi, SoDienThoai) values( N'Nguyễn Minh Sơn','10/10/2002 12:00:00 AM', N'Nam', N'Khánh Hoà','0354964840');

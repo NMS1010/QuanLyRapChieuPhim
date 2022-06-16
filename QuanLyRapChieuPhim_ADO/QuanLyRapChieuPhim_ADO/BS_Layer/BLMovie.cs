@@ -86,7 +86,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
         }
         public static List<Tuple<string, string>> GetFilms()
         {
-            string command = "select TenPhim, MaBoPhim from BoPhim where TrangThai = 1";
+            string command = "select TenPhim, MaBoPhim from BoPhim";
             DataSet ds = DataProvider.GetData(command);
             List<Tuple<string, string>> films = new List<Tuple<string, string>>();
             foreach (DataRow dr in ds.Tables[0].Rows)

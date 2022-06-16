@@ -45,7 +45,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
         }
         public static List<Tuple<string, string>> GetCinemaRooms()
         {
-            string command = "select TenPhong, MaPhongChieu from PhongChieu where TinhTrang = 1";
+            string command = "select TenPhong, MaPhongChieu from PhongChieu";
             DataSet ds = DataProvider.GetData(command);
             List<Tuple<string, string>> cinemaRooms = new List<Tuple<string, string>>();
             foreach (DataRow dr in ds.Tables[0].Rows)
