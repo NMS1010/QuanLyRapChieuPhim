@@ -27,6 +27,10 @@ namespace QuanLyRapChieuPhim_ADO.UI_Layer
             utilities.FormLoad(BLScreenFormat.GetData());
             utilities.SetEnableControl(false);
             utilities.SetEnableButton(new List<Button>() { saveBtn }, false);
+            if (screenDataGridView.Rows.Count == 1)
+            {
+                utilities.SetEnableButton(new List<Button>() { editBtn, removeBtn }, false);
+            }
         }
 
         private void saveBtn_Click(object sender, EventArgs e)

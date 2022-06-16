@@ -1,168 +1,161 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLAccount" Collapsed="true">
-    <Position X="4" Y="0.5" Width="1.5" />
+  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLAccount">
+    <Position X="0.5" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAEAAEAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BS_Layer\BLAccount.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLCinemaRoom" Collapsed="true">
-    <Position X="5.75" Y="0.5" Width="1.5" />
+  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLCinemaRoom">
+    <Position X="5" Y="7.25" Width="3" />
     <TypeIdentifier>
-      <HashCode>AAQAAEAAEAAAEAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQBAEAAEAAAAAAAAAAABAAAAAAAAAAAAAAIAAQAAAA=</HashCode>
       <FileName>BS_Layer\BLCinemaRoom.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLCommon" Collapsed="true">
-    <Position X="7.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>BS_Layer\BLCommon.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLCustomer" Collapsed="true">
-    <Position X="9.25" Y="0.5" Width="1.5" />
+  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLCustomer">
+    <Position X="2.25" Y="12" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAQAAEAAEAAAAAAAAIAABAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
       <FileName>BS_Layer\BLCustomer.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLEmployee" Collapsed="true">
-    <Position X="11" Y="0.5" Width="1.5" />
+  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLEmployee">
+    <Position X="0.5" Y="12.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAEAAEAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BS_Layer\BLEmployee.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLGenre" Collapsed="true">
-    <Position X="12.75" Y="0.5" Width="1.5" />
+  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLGenre">
+    <Position X="7.75" Y="10" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAEAAEAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQABEAAEAAAAAAAAACABAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>BS_Layer\BLGenre.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLLogin" Collapsed="true">
-    <Position X="0.5" Y="1.5" Width="1.5" />
+  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLLogin">
+    <Position X="0.5" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAgAAAAIAAAAAAEAAAAQAAAAEAAAA=</HashCode>
       <FileName>BS_Layer\BLLogin.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLMovie" Collapsed="true">
-    <Position X="2.25" Y="1.5" Width="1.5" />
+  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLMovie">
+    <Position X="5.25" Y="10" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAQABEAAEAAAAEAAAACABAEAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <HashCode>AAQAAEQAEAAAAEAAAAAABAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
       <FileName>BS_Layer\BLMovie.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLOrderTicket" Collapsed="true">
-    <Position X="4" Y="1.5" Width="1.5" />
+  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLOrderTicket">
+    <Position X="2.25" Y="7.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>gCABAIAAAAFJAAAAAAQAAAAAkAAAIAAAAAAIAAAAkAA=</HashCode>
       <FileName>BS_Layer\BLOrderTicket.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLRevenue" Collapsed="true">
-    <Position X="5.75" Y="1.5" Width="1.5" />
+  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLRevenue">
+    <Position X="4.75" Y="12.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AABAAAAAAABCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BS_Layer\BLRevenue.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLScreenFormat" Collapsed="true">
-    <Position X="7.5" Y="1.5" Width="1.5" />
+  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLScreenFormat">
+    <Position X="10.5" Y="10" Width="3.25" />
     <TypeIdentifier>
-      <HashCode>AAQAAEAAEAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAEQAEAAAEAAAAAIABAAAAAAAAAAAAAAAAACAAAA=</HashCode>
       <FileName>BS_Layer\BLScreenFormat.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLShowTime" Collapsed="true">
-    <Position X="9.25" Y="1.5" Width="1.5" />
+  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLShowTime">
+    <Position X="8.25" Y="7.25" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAQBAEQgEAAAAAAAAAIABAAAABAAAAAAAAgIAASIAAA=</HashCode>
+      <HashCode>AAQAAEAAEAAAAAAAAAAABAAAABAAAAAAAAgAAAAAAAA=</HashCode>
       <FileName>BS_Layer\BLShowTime.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLTicket" Collapsed="true">
-    <Position X="11" Y="1.5" Width="1.5" />
+  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLTicket">
+    <Position X="11.25" Y="7.25" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAQAQEIAAAAAAAIAAAAAAAAAAAAACAAAAAAAAAAAAIA=</HashCode>
+      <HashCode>AAQAQEIgAAAAAAIAAAAAAAAAAAAACAAAAAAAAAAAAIA=</HashCode>
       <FileName>BS_Layer\BLTicket.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.BoPhim" Collapsed="true">
-    <Position X="12.75" Y="1.5" Width="1.5" />
+  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.BoPhim">
+    <Position X="6.75" Y="15.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAgAAAAAgACJBAACAAIAAAAAAAABAAAAAAEAACAAA=</HashCode>
       <FileName>DataObjects\BoPhim.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.CinemaManagementModel" Collapsed="true">
-    <Position X="4" Y="2.5" Width="1.5" />
+  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.CinemaManagementModel">
+    <Position X="4" Y="15.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAIgAAAAAAAIAAAAAAAACAAEAAAAIAAAAAAAgAGIAA=</HashCode>
       <FileName>DataObjects\CinemaManagementModel.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.DinhDangManHinh" Collapsed="true">
-    <Position X="0.5" Y="3.5" Width="1.5" />
+  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.DinhDangManHinh">
+    <Position X="7.5" Y="19.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAIAAEAAAAAAACAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DataObjects\DinhDangManHinh.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.KhachHang" Collapsed="true">
-    <Position X="7.5" Y="3.5" Width="1.5" />
+  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.KhachHang">
+    <Position X="10.5" Y="15.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAIAASAAABAAAEAAAAAAABAAAAAAAAIAI=</HashCode>
       <FileName>DataObjects\KhachHang.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.NhanVien" Collapsed="true">
-    <Position X="0.5" Y="4.5" Width="1.5" />
+  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.NhanVien">
+    <Position X="2.25" Y="15.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAQAAABACAEAAAAAAAAAAAQAAAAIAI=</HashCode>
       <FileName>DataObjects\NhanVien.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.PhongChieu" Collapsed="true">
-    <Position X="2.25" Y="4.5" Width="1.5" />
+  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.PhongChieu">
+    <Position X="8.5" Y="15.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAgEEQAAAAAAAAAAAAAEAAAAQAAAAEAAAAAACBAAA=</HashCode>
       <FileName>DataObjects\PhongChieu.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.SuatChieu" Collapsed="true">
-    <Position X="4" Y="5.5" Width="1.5" />
+  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.SuatChieu">
+    <Position X="2.25" Y="18.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAEKAAAAAAIAAAAAAAAIAAAAAAAAACAAAA=</HashCode>
       <FileName>DataObjects\SuatChieu.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.TaiKhoan" Collapsed="true">
-    <Position X="7.5" Y="5.5" Width="1.5" />
+  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.TaiKhoan">
+    <Position X="4.25" Y="19.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAABAAAAAAEAAAAAAAAAAAAAAAIAAAAAQAAAABAA=</HashCode>
       <FileName>DataObjects\TaiKhoan.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.TheLoai" Collapsed="true">
-    <Position X="9.25" Y="5.5" Width="1.5" />
+  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.TheLoai">
+    <Position X="12.25" Y="15.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAIAAAIAA=</HashCode>
       <FileName>DataObjects\TheLoai.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.Ve" Collapsed="true">
-    <Position X="2.25" Y="6.5" Width="1.5" />
+  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.Ve">
+    <Position X="0.5" Y="15.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAgAAEAAAAAAAAAICAAAAAIAEAABAgAAAAIAAAA=</HashCode>
       <FileName>DataObjects\Ve.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="QuanLyRapChieuPhim_EF.DBConnect.DBConnection" Collapsed="true">
-    <Position X="12.75" Y="2.5" Width="1.5" />
+  <Class Name="QuanLyRapChieuPhim_EF.DBConnect.DBConnection">
+    <Position X="12.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAACAAAAAAIAAAAAAAAABACAAAAABAAA=</HashCode>
       <FileName>DBConnect\DBConnection.cs</FileName>
@@ -292,7 +285,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="QuanLyRapChieuPhim_EF.UI_Layer.DataBaseSettingForm" Collapsed="true">
-    <Position X="11" Y="2.5" Width="1.5" />
+    <Position X="10.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAABCAAABAAAACAAAACAAAAAAADAMAAAAAAAAA=</HashCode>
       <FileName>UI_Layer\DataBaseSettingForm.cs</FileName>
@@ -355,21 +348,21 @@
     </TypeIdentifier>
   </Class>
   <Enum Name="QuanLyRapChieuPhim_EF.Enum.ACCOUNT_ROLE" Collapsed="true">
-    <Position X="0.5" Y="7.75" Width="1.5" />
+    <Position X="4" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAQAAAAAAAAAAAAA=</HashCode>
       <FileName>Enum\ACCOUNT_ROLE.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="QuanLyRapChieuPhim_EF.Enum.BONUS_POINT" Collapsed="true">
-    <Position X="2.25" Y="7.75" Width="1.5" />
+    <Position X="5.75" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enum\BONUS_POINT.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="QuanLyRapChieuPhim_EF.Enum.SALE" Collapsed="true">
-    <Position X="4" Y="7.75" Width="1.5" />
+    <Position X="7.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enum\SALE.cs</FileName>

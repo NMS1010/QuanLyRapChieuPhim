@@ -25,7 +25,7 @@ namespace QuanLyRapChieuPhim_ADO.UI_Layer
             endDateDTimePicker, yearTxb, directorTxb, studioFilmTxb, movieStatusCbx,  genreCheckLstbox};
             
             utilities = new Utilities(controls, movieDataGridView);
-            List<string> genreNames = BLMovie.GetGenreNames();
+            List<string> genreNames = BLGenre.GetGenreNames();
             genreNames.ForEach(genreName => {
                 genreCheckLstbox.Items.Add(genreName);
             });
@@ -33,6 +33,10 @@ namespace QuanLyRapChieuPhim_ADO.UI_Layer
             utilities.FormLoad(BLMovie.GetData());
             utilities.SetEnableControl(false);
             utilities.SetEnableButton(new List<Button>() { saveBtn }, false);
+            if (movieDataGridView.Rows.Count == 1)
+            {
+                utilities.SetEnableButton(new List<Button>() { editBtn, removeBtn }, false);
+            }
         }
         private void CheckChange()
         {

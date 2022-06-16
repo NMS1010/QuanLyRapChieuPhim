@@ -36,7 +36,50 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
             }
             return ds;
         }
-
+        public static List<string> GetGenreIDFromGenreName(string genreName)
+        {
+            List<string> genreIDs = new List<string>();
+            using (CinemaManagementModel ctx = new CinemaManagementModel())
+            {
+                IList<TheLoai> genres = (from a in ctx.TheLoais
+                                         where a.TenTheLoai == genreName
+                                         select a).ToList();
+                foreach (TheLoai genre in genres)
+                {
+                    genreIDs.Add(genre.MaTheLoai);
+                }
+            }
+            return genreIDs;
+        }
+        public static List<string> GetGenreNames()
+        {
+            List<string> genreNames = new List<string>();
+            using (CinemaManagementModel ctx = new CinemaManagementModel())
+            {
+                IList<TheLoai> genres = (from a in ctx.TheLoais
+                                         select a).ToList();
+                foreach (TheLoai genre in genres)
+                {
+                    genreNames.Add(genre.TenTheLoai);
+                }
+            }
+            return genreNames;
+        }
+        public static List<string> GetGenreNameFromFilmID(string filmID)
+        {
+            List<string> genreNames = new List<string>();
+            using (CinemaManagementModel ctx = new CinemaManagementModel())
+            {
+                IList<TheLoai> genres = (from a in ctx.BoPhims
+                                         where a.MaBoPhim == filmID
+                                         select a.TheLoais).SingleOrDefault().ToList();
+                foreach (TheLoai genre in genres)
+                {
+                    genreNames.Add(genre.TenTheLoai);
+                }
+            }
+            return genreNames;
+        }
         public static bool Update(string genreId, string genreName, ref string err)
         {
             bool success = true;

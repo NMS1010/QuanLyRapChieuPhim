@@ -76,6 +76,18 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
             string command = $"delete from {tableName} where MaSuatChieu = '{showTimeID}'";
             return DataProvider.ExecuteNonQuery(command, ref error);
         }
+        public static string GetTicketPriceFromCinemaRoomID(string cinemaRoomID)
+        {
+            string command = $"select MaDinhDangMH from PhongChieu where MaPhongChieu = N'{cinemaRoomID}'";
+            string screenFormatID = DataProvider.GetSingleStringValueFromQuery(command);
+            return GetTicketPriceFromScreenFormatID(screenFormatID);
+        }
+
+        public static string GetTicketPriceFromScreenFormatID(string screenFormatID)
+        {
+            string command = $"select GiaVe from DinhDangManHinh where MaDinhDangMH = N'{screenFormatID}'";
+            return DataProvider.GetSingleStringValueFromQuery(command);
+        }
         public static bool GenerateTicket(string showTimeID, ref string error)
         {
             if (IsTicketsCreateByShowTime(showTimeID))
@@ -83,7 +95,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
                 error = "Đã tạo vé cho suất chiếu này";
                 return false;
             }
-            string cinemaRoomID = BLShowTime.GetCinemaRoomIDFromShowTimeID(showTimeID);
+            string cinemaRoomID = BLCinemaRoom.GetCinemaRoomIDFromShowTimeID(showTimeID);
             string command = $"select SoHangGhe, SoGheMoiHang from PhongChieu where MaPhongChieu = '{cinemaRoomID}'";
             DataSet seatInfo = DataProvider.GetData(command);
             if (seatInfo.Tables[0].Rows.Count == 0)

@@ -37,7 +37,49 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
             }
             return ds;
         }
-
+        public static List<Tuple<string, string>> GetScreenFormats()
+        {
+            List<Tuple<string, string>> screenFormats = new List<Tuple<string, string>>();
+            using (CinemaManagementModel ctx = new CinemaManagementModel())
+            {
+                IList<DinhDangManHinh> formats = (from a in ctx.DinhDangManHinhs
+                                                  select a).ToList();
+                foreach (DinhDangManHinh format in formats)
+                {
+                    screenFormats.Add(new Tuple<string, string>(format.TenDinhDang, format.MaDinhDangMH));
+                }
+            }
+            return screenFormats;
+        }
+        public static string GetScreenFormatNameFromScreenFormatID(string screenFormatID)
+        {
+            using (CinemaManagementModel ctx = new CinemaManagementModel())
+            {
+                var screenFormatName = (from a in ctx.DinhDangManHinhs
+                                        where a.MaDinhDangMH == screenFormatID
+                                        select a.TenDinhDang).SingleOrDefault();
+                if (string.IsNullOrEmpty(screenFormatName))
+                    return "";
+                return screenFormatName;
+            }
+        }
+        public static string GetScreenFormatNameFromCinemaRoomID(string cinemaRoomID)
+        {
+            string screenFormatID = GetScreenFormatIDFromCinemaRoomID(cinemaRoomID);
+            return GetScreenFormatNameFromScreenFormatID(screenFormatID);
+        }
+        public static string GetScreenFormatIDFromCinemaRoomID(string cinemaRoomID)
+        {
+            using (CinemaManagementModel ctx = new CinemaManagementModel())
+            {
+                var formatID = (from a in ctx.PhongChieux
+                                where a.MaPhongChieu == cinemaRoomID
+                                select a.MaDinhDangMH).SingleOrDefault();
+                if (string.IsNullOrEmpty(formatID))
+                    return "";
+                return formatID;
+            }
+        }
         public static bool Update(string screenFormatID, string nameScreenFormat, decimal ticketPrice, ref string err)
         {
             bool success = true;

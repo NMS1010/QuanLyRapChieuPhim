@@ -44,6 +44,11 @@ namespace QuanLyRapChieuPhim_ADO.UI_Layer
             utilities.FormLoad(BLEmployee.GetData());
             utilities.SetEnableControl(false);
             utilities.SetEnableButton(new List<Button>() { saveBtn }, false);
+
+            if (employeeDataGridView.Rows.Count == 1)
+            {
+                utilities.SetEnableButton(new List<Button>() { editBtn, removeBtn }, false);
+            }
         }
         private bool isAddData = false;
         private void addBtn_Click(object sender, EventArgs e)

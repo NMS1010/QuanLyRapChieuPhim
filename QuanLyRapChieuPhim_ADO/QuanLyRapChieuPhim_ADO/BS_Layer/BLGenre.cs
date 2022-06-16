@@ -23,6 +23,26 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
             return dt;
         }
 
+        public static List<string> GetGenreIDFromGenreName(string genreName)
+        {
+            return DataProvider.GetStringValuesFromSpecificColumnWithCondition("TheLoai", "MaTheLoai", $"TenTheLoai = N'{genreName}'");
+        }
+        public static List<string> GetGenreNames()
+        {
+            return DataProvider.GetStringValuesFromSpecificColumn("TheLoai", "TenTheLoai");
+        }
+        public static string GetGenreNameFromGenreID(string genreID)
+        {
+            string command = $"select TenTheLoai from TheLoai where MaTheLoai = N'{genreID}'";
+            return DataProvider.GetSingleStringValueFromQuery(command);
+        }
+        public static List<string> GetGenreNameFromFilmID(string filmID)
+        {
+            List<string> genreIDs = DataProvider.GetStringValuesFromSpecificColumnWithCondition("BoPhim_TheLoai", "MaTheLoai", $"MaBoPhim = N'{filmID}'");
+            List<string> genreNames = new List<string>();
+            genreIDs.ForEach(id => genreNames.Add(GetGenreNameFromGenreID(id)));
+            return genreNames;
+        }
         public static bool Update(string genreId, string genreName, ref string err)
         {
             string command = $"update {tableName} set TenTheLoai = N'{genreName}' where MaTheLoai = '{genreId}'; ";

@@ -29,7 +29,12 @@ namespace QuanLyRapChieuPhim_ADO.UI_Layer
             utilities.SetEnableControl(false);
             //
             utilities.SetEnableButton(new List<Button>() { saveBtn }, false);
-            screenFormats = BLCinemaRoom.GetScreenFormats();
+
+            if (cinemaRoomDataGridView.Rows.Count == 1)
+            {
+                utilities.SetEnableButton(new List<Button>() { editBtn, removeBtn }, false);
+            }
+            screenFormats = BLScreenFormat.GetScreenFormats();
             screenFormats.ForEach(s =>
             {
                 screenNameCinemaRoomCbx.Items.Add(s.Item1);

@@ -19,7 +19,7 @@ namespace QuanLyRapChieuPhim_EF.DBConnect
         {
             var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
-            connectionStringsSection.ConnectionStrings["CinemaManagementModel"].ConnectionString = $"Data Source={ServerName};Initial Catalog={DatabaseName}";
+            connectionStringsSection.ConnectionStrings["CinemaManagementModel"].ConnectionString = ConnectionString;
             config.Save();
             ConfigurationManager.RefreshSection("CinemaManagementModel");
         }

@@ -80,7 +80,6 @@
   <ItemGroup>
     <Compile Include="BS_Layer\BLAccount.cs" />
     <Compile Include="BS_Layer\BLCinemaRoom.cs" />
-    <Compile Include="BS_Layer\BLCommon.cs" />
     <Compile Include="BS_Layer\BLCustomer.cs" />
     <Compile Include="BS_Layer\BLEmployee.cs" />
     <Compile Include="BS_Layer\BLGenre.cs" />

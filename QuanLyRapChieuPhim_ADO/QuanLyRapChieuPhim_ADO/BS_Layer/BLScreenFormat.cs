@@ -21,7 +21,32 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
             DataSet dt = DataProvider.GetData(command);
             return dt;
         }
-
+        public static string GetScreenFormatNameFromScreenFormatID(string screenFormatID)
+        {
+            string command = $"select TenDinhDang from DinhDangManHinh where MaDinhDangMH = N'{screenFormatID}'";
+            return DataProvider.GetSingleStringValueFromQuery(command);
+        }
+        public static string GetScreenFormatNameFromCinemaRoomID(string cinemaRoomID)
+        {
+            string screenFormatID = GetScreenFormatIDFromCinemaRoomID(cinemaRoomID);
+            return GetScreenFormatNameFromScreenFormatID(screenFormatID);
+        }
+        public static string GetScreenFormatIDFromCinemaRoomID(string cinemaRoomID)
+        {
+            string command = $"select MaDinhDangMH from PhongChieu where MaPhongChieu = N'{cinemaRoomID}'";
+            return DataProvider.GetSingleStringValueFromQuery(command);
+        }
+        public static List<Tuple<string, string>> GetScreenFormats()
+        {
+            string command = $"select TenDinhDang, MaDinhDangMH from DinhDangManHinh";
+            DataSet ds = DataProvider.GetData(command);
+            List<Tuple<string, string>> screenFormats = new List<Tuple<string, string>>();
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                screenFormats.Add(new Tuple<string, string>(dr["TenDinhDang"].ToString(), dr["MaDinhDangMH"].ToString()));
+            }
+            return screenFormats;
+        }
         public static bool Update(string screenFormatID, string nameScreenFormat, decimal ticketPrice, ref string err)
         {
             string command = $"update {tableName} set TenDinhDang = N'{nameScreenFormat}', GiaVe = {ticketPrice} where MaDinhDangMH = '{screenFormatID}'; ";

@@ -10,7 +10,7 @@
   <Class Name="QuanLyRapChieuPhim_ADO.BS_Layer.BLCinemaRoom" Collapsed="true">
     <Position X="5.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAEAAEAAAEAAAAACABAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQBAEAAEAAAAAAAAACABAAAAAAAAAABAAAIAAQAAAA=</HashCode>
       <FileName>BS_Layer\BLCinemaRoom.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -38,7 +38,7 @@
   <Class Name="QuanLyRapChieuPhim_ADO.BS_Layer.BLGenre" Collapsed="true">
     <Position X="0.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAEAAEAAAAAAAAAAABAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQABEAAEAAAAAAAAACABAEAAAAAAAABAAAAAAAAAAI=</HashCode>
       <FileName>BS_Layer\BLGenre.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -52,7 +52,7 @@
   <Class Name="QuanLyRapChieuPhim_ADO.BS_Layer.BLMovie" Collapsed="true">
     <Position X="4" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQABEAAEAAAAEAAAACABAEAAAAAAAABCAAAAAAAAAI=</HashCode>
+      <HashCode>AAQAAEQAEAAAAEAAAAAABAAAAAAAAAABCAAAAAAIAAA=</HashCode>
       <FileName>BS_Layer\BLMovie.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -73,26 +73,26 @@
   <Class Name="QuanLyRapChieuPhim_ADO.BS_Layer.BLScreenFormat" Collapsed="true">
     <Position X="9.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAEAAEAAAAAAAAAAABAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAEQAEAAAEAAAAAIABAAAAAAAAAABAAAAAACAAAA=</HashCode>
       <FileName>BS_Layer\BLScreenFormat.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="QuanLyRapChieuPhim_ADO.BS_Layer.BLShowTime" Collapsed="true">
     <Position X="11" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQBAEUgEAAAAAAAAAIABAAAABAAAAABAAgIAASIAAA=</HashCode>
+      <HashCode>AAQAAEAAEAAAAAAAAAAABAAAABAAAAABAAgAAAAAAAA=</HashCode>
       <FileName>BS_Layer\BLShowTime.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="QuanLyRapChieuPhim_ADO.BS_Layer.BLTicket" Collapsed="true">
     <Position X="0.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAQEIAAAAAAAIAAAAAAAAAAAAACAABAAAAAAAAAIA=</HashCode>
+      <HashCode>AAQAQEMgAAAAAAIAAAAAAAAAAAAACAABAAAAAAAAAIA=</HashCode>
       <FileName>BS_Layer\BLTicket.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="QuanLyRapChieuPhim_ADO.DB_Layer.DataProvider" Collapsed="true">
-    <Position X="0.5" Y="3.5" Width="1.5" />
+  <Class Name="QuanLyRapChieuPhim_ADO.DB_Layer.DataProvider">
+    <Position X="10.5" Y="5.75" Width="3.75" />
     <TypeIdentifier>
       <HashCode>IAAAACAAEIAABACBAAACAEAAAAAAAAABIAEAAAABAEA=</HashCode>
       <FileName>DB_Layer\DataProvider.cs</FileName>
@@ -122,7 +122,7 @@
   <Class Name="QuanLyRapChieuPhim_ADO.RevenueReportForm" Collapsed="true">
     <Position X="5.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>UAAAAAIAACAAAAEAACiAAAACAAAAAAACAAAIAAAAAAA=</HashCode>
+      <HashCode>UAAAAAIAACAAAAEAACiAAAACAAAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>RevenueReportForm.cs</FileName>
     </TypeIdentifier>
   </Class>

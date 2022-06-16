@@ -37,16 +37,27 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
                 $"from DinhDangManHinh where MaDinhDangMH = '{screenFormatID}'";
             return DataProvider.GetSingleStringValueFromQuery(command);
         }
-        public static List<Tuple<string, string>> GetScreenFormats()
+
+        public static string GetCinemaRoomIDFromShowTimeID(string showTimeID)
         {
-            string command = $"select TenDinhDang, MaDinhDangMH from DinhDangManHinh";
+            string command = $"select MaPhongChieu from {tableName} where MaSuatChieu = N'{showTimeID}'";
+            return DataProvider.GetSingleStringValueFromQuery(command);
+        }
+        public static List<Tuple<string, string>> GetCinemaRooms()
+        {
+            string command = "select TenPhong, MaPhongChieu from PhongChieu where TinhTrang = 1";
             DataSet ds = DataProvider.GetData(command);
-            List<Tuple<string, string>> screenFormats = new List<Tuple<string, string>>();
-            foreach(DataRow dr in ds.Tables[0].Rows)
+            List<Tuple<string, string>> cinemaRooms = new List<Tuple<string, string>>();
+            foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                screenFormats.Add(new Tuple<string, string>(dr["TenDinhDang"].ToString(), dr["MaDinhDangMH"].ToString()));
+                cinemaRooms.Add(new Tuple<string, string>(dr["TenPhong"].ToString(), dr["MaPhongChieu"].ToString()));
             }
-            return screenFormats;
+            return cinemaRooms;
+        }
+        public static string GetCinemaRoomNameFromCinemaRoomID(string cinemaRoomID)
+        {
+            string command = $"select TenPhong from PhongChieu where MaPhongChieu = N'{cinemaRoomID}'";
+            return DataProvider.GetSingleStringValueFromQuery(command);
         }
         public static bool Update(string cinemaRoomId, string cinemaRoomName, int totalChair,int cinemaRoomStatus,
             int totalNumberRowChair, int totalChairPerRow, string screenFormatID, ref string err)

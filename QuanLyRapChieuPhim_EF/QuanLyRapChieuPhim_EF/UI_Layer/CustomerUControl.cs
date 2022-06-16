@@ -44,6 +44,10 @@ namespace QuanLyRapChieuPhim_EF.UI_Layer
             utilities.FormLoad(BLCustomer.GetData());
             utilities.SetEnableControl(false);
             utilities.SetEnableButton(new List<Button>() { saveBtn }, false);
+            if (customerDataGridView.Rows.Count == 1)
+            {
+                utilities.SetEnableButton(new List<Button>() { editBtn, removeBtn }, false);
+            }
         }
         private bool isAddData = false;
         private void addBtn_Click(object sender, EventArgs e)

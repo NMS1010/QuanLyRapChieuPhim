@@ -35,10 +35,10 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                 {
                     DataRow dr = dt.NewRow();
                     dr["MaSuatChieu"] = showTime.MaSuatChieu;
-                    dr["TenPhim"] = GetFilmNameFromFilmID(showTime.MaBoPhim);
-                    dr["TenDinhDang"] = GetScreenFormatNameFromCinemaRoomID(showTime.MaPhongChieu);
-                    dr["TenPhongChieu"] = GetCinemaRoomNameFromCinemaRoomID(showTime.MaPhongChieu);
-                    string price = GetTicketPriceFromCinemaRoomID(showTime.MaPhongChieu);
+                    dr["TenPhim"] = BLMovie.GetFilmNameFromFilmID(showTime.MaBoPhim);
+                    dr["TenDinhDang"] = BLScreenFormat.GetScreenFormatNameFromCinemaRoomID(showTime.MaPhongChieu);
+                    dr["TenPhongChieu"] = BLCinemaRoom.GetCinemaRoomNameFromCinemaRoomID(showTime.MaPhongChieu);
+                    string price = BLTicket.GetTicketPriceFromCinemaRoomID(showTime.MaPhongChieu);
                     if (price == "")
                     {
                         price = "0";
@@ -60,116 +60,14 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
             return ds;
         }
         
-        public static List<Tuple<string, string>> GetFilms()
-        {
-            List<Tuple<string, string>> films = new List<Tuple<string, string>>();
-            using (CinemaManagementModel ctx = new CinemaManagementModel())
-            {
-                IList<BoPhim> filmInfo = (from a in ctx.BoPhims
-                               where a.TrangThai == 1
-                               select a).ToList();
-                foreach (var f in filmInfo)
-                {
-                    films.Add(new Tuple<string, string>(f.TenPhim, f.MaBoPhim));
-                }
-            }
-            
-            return films;
-        }
-        public static List<Tuple<string, string>> GetCinemaRooms()
-        {
-            List<Tuple<string, string>> cinemaRooms = new List<Tuple<string, string>>();
-            using (CinemaManagementModel ctx = new CinemaManagementModel())
-            {
-                IList<PhongChieu> rooms = (from a in ctx.PhongChieux
-                            where a.TinhTrang == 1
-                            select a).ToList();
-                foreach (var c in rooms)
-                {
-                    cinemaRooms.Add(new Tuple<string, string>(c.TenPhong, c.MaPhongChieu));
-                }
-            }
-            return cinemaRooms;
-        }
         
-        public static string GetScreenFormatNameFromCinemaRoomID(string cinemaRoomID)
-        {
-            string screenFormatID = GetScreenFormatIDFromCinemaRoomID(cinemaRoomID);
-            return GetScreenFormatNameFromScreenFormatID(screenFormatID);
-        }
-        public static string GetScreenFormatIDFromCinemaRoomID(string cinemaRoomID)
-        {
-            using (CinemaManagementModel ctx = new CinemaManagementModel())
-            {
-                var formatID = (from a in ctx.PhongChieux
-                            where a.MaPhongChieu == cinemaRoomID
-                            select a.MaDinhDangMH).SingleOrDefault();
-                if (string.IsNullOrEmpty(formatID))
-                    return "";
-                return formatID;
-            }
-        }
-        public static string GetTicketPriceFromCinemaRoomID(string cinemaRoomID)
-        {
-            using (CinemaManagementModel ctx = new CinemaManagementModel())
-            {
-                decimal ticketPrice = (from a in ctx.PhongChieux
-                                join b in ctx.DinhDangManHinhs on a.MaDinhDangMH equals b.MaDinhDangMH
-                                where a.MaPhongChieu == cinemaRoomID
-                                select b.GiaVe).SingleOrDefault();
-                return ticketPrice.ToString();
-            }
-        }
+        
+        
+        
+        
 
-        public static string GetFilmNameFromFilmID(string filmID)
-        {
-            using (CinemaManagementModel ctx = new CinemaManagementModel())
-            {
-                var filmName = (from a in ctx.BoPhims
-                                where a.MaBoPhim == filmID
-                                select a.TenPhim).SingleOrDefault();
-                if (string.IsNullOrEmpty(filmName))
-                    return "";
-                return filmName;
-            }
-        }
-        public static string GetCinemaRoomNameFromCinemaRoomID(string cinemaRoomID)
-        {
-            using (CinemaManagementModel ctx = new CinemaManagementModel())
-            {
-                var cinemaRoomName = (from a in ctx.PhongChieux
-                                    where a.MaPhongChieu == cinemaRoomID
-                                      select a.TenPhong).SingleOrDefault();
-                if (string.IsNullOrEmpty(cinemaRoomName))
-                    return "";
-                return cinemaRoomName;
-            }
-        }
-        public static string GetScreenFormatNameFromScreenFormatID(string screenFormatID)
-        {
-            using (CinemaManagementModel ctx = new CinemaManagementModel())
-            {
-                var screenFormatName = (from a in ctx.DinhDangManHinhs
-                                      where a.MaDinhDangMH == screenFormatID
-                                        select a.TenDinhDang).SingleOrDefault();
-                if (string.IsNullOrEmpty(screenFormatName))
-                    return "";
-                return screenFormatName;
-            }
-        }
-
-        public static string GetCinemaRoomIDFromShowTimeID(string showTimeID)
-        {
-            using (CinemaManagementModel ctx = new CinemaManagementModel())
-            {
-                var cinemaRoomID = (from a in ctx.SuatChieux
-                                        where a.MaSuatChieu == showTimeID
-                                        select a.MaPhongChieu).SingleOrDefault();
-                if (string.IsNullOrEmpty(cinemaRoomID))
-                    return "";
-                return cinemaRoomID;
-            }
-        }
+        
+        
         public static bool CheckCinemaRoomAndMovie(string filmID, string cinemaRoomID, ref string error)
         {
             using (CinemaManagementModel ctx = new CinemaManagementModel())

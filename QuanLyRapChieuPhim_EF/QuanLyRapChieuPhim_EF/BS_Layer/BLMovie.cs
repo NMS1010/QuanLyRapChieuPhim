@@ -53,7 +53,7 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                     dr["TenHangPhim"] = movie.TenHangPhim;
                     dr["TrangThai"] = movie.TrangThai;
                     string str = "";
-                    List<string> temp = GetGenreNameFromFilmID(movie.MaBoPhim);
+                    List<string> temp = BLGenre.GetGenreNameFromFilmID(movie.MaBoPhim);
                     if (temp.Count != 0)
                         str = temp.Aggregate((i, j) => i + ", " + j);
                     dr["TheLoai"] = str;
@@ -64,57 +64,34 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
 
             return ds;
         }
-        public static List<string> GetGenreIDFromGenreName(string genreName)
+
+        public static List<Tuple<string, string>> GetFilms()
         {
-            List<string> genreIDs = new List<string>();
+            List<Tuple<string, string>> films = new List<Tuple<string, string>>();
             using (CinemaManagementModel ctx = new CinemaManagementModel())
             {
-                IList<TheLoai> genres = (from a in ctx.TheLoais
-                             where a.TenTheLoai == genreName
-                             select a).ToList();
-                foreach (TheLoai genre in genres)
+                IList<BoPhim> filmInfo = (from a in ctx.BoPhims
+                                          where a.TrangThai == 1
+                                          select a).ToList();
+                foreach (var f in filmInfo)
                 {
-                    genreIDs.Add(genre.MaTheLoai);
+                    films.Add(new Tuple<string, string>(f.TenPhim, f.MaBoPhim));
                 }
             }
-            return genreIDs;
+
+            return films;
         }
-        public static List<string> GetGenreNames()
-        {
-            List<string> genreNames = new List<string>();
-            using (CinemaManagementModel ctx = new CinemaManagementModel())
-            {
-                IList<TheLoai> genres = (from a in ctx.TheLoais
-                             select a).ToList();
-                foreach (TheLoai genre in genres)
-                {
-                    genreNames.Add(genre.TenTheLoai);
-                }
-            }
-            return genreNames;
-        }
-        public static string GetGenreNameFromGenreID(string genreID)
+        public static string GetFilmNameFromFilmID(string filmID)
         {
             using (CinemaManagementModel ctx = new CinemaManagementModel())
             {
-                string genreName = ctx.TheLoais.SingleOrDefault(x => x.MaTheLoai == genreID)?.TenTheLoai;
-                return genreName;
+                var filmName = (from a in ctx.BoPhims
+                                where a.MaBoPhim == filmID
+                                select a.TenPhim).SingleOrDefault();
+                if (string.IsNullOrEmpty(filmName))
+                    return "";
+                return filmName;
             }
-        }
-        public static List<string> GetGenreNameFromFilmID(string filmID)
-        {
-            List<string> genreNames = new List<string>();
-            using (CinemaManagementModel ctx = new CinemaManagementModel())
-            {
-                IList<TheLoai> genres = (from a in ctx.BoPhims
-                             where a.MaBoPhim == filmID
-                             select a.TheLoais).SingleOrDefault().ToList();
-                foreach (TheLoai genre in genres)
-                {
-                    genreNames.Add(genre.TenTheLoai);
-                }
-            }
-            return genreNames;
         }
         public static bool Update(string filmId, string filmName, string filmDes, double totalFilmTime,
             DateTime startShow, DateTime endShow, int year, string director, string studioFilm, int movieStatus, ref string err)
@@ -220,7 +197,7 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                     }
                     foreach (string genreName in genreNames)
                     {
-                        List<string> genreIDs = GetGenreIDFromGenreName(genreName);
+                        List<string> genreIDs = BLGenre.GetGenreIDFromGenreName(genreName);
                         foreach (string genreID in genreIDs)
                         {
                             ctx.BoPhims.Find(filmId).TheLoais.Add(ctx.TheLoais.Find(genreID));

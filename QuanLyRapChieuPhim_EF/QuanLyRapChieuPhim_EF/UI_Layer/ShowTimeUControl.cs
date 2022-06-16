@@ -27,8 +27,8 @@ namespace QuanLyRapChieuPhim_EF.UI_Layer
             cinemaRoomNameCbx, priceTicketTxb, showTimeDateDtimePicker, showTimeTimeDtimePicker};
 
             utilities = new Utilities(controls, showTimeDataGridView);
-            films = BLShowTime.GetFilms();
-            cinemaRooms = BLShowTime.GetCinemaRooms();
+            films = BLMovie.GetFilms();
+            cinemaRooms = BLCinemaRoom.GetCinemaRooms();
             films.ForEach(s =>
             {
                 filmNameCbx.Items.Add(s.Item1);
@@ -40,6 +40,10 @@ namespace QuanLyRapChieuPhim_EF.UI_Layer
             utilities.FormLoad(BLShowTime.GetData());
             utilities.SetEnableControl(false);
             utilities.SetEnableButton(new List<Button>() { saveBtn }, false);
+            if (showTimeDataGridView.Rows.Count == 1)
+            {
+                utilities.SetEnableButton(new List<Button>() { editBtn, removeBtn }, false);
+            }
         }
         private void CheckChange()
         {
@@ -185,8 +189,8 @@ namespace QuanLyRapChieuPhim_EF.UI_Layer
             if (cinemaRoomNameCbx.SelectedIndex < 0)
                 return;
             string cinemaRoomID = cinemaRooms[cinemaRoomNameCbx.SelectedIndex].Item2;
-            priceTicketTxb.Text = BLShowTime.GetTicketPriceFromCinemaRoomID(cinemaRoomID);
-            formatFilmTxb.Text = BLShowTime.GetScreenFormatNameFromCinemaRoomID(cinemaRoomID);
+            priceTicketTxb.Text = BLTicket.GetTicketPriceFromCinemaRoomID(cinemaRoomID);
+            formatFilmTxb.Text = BLScreenFormat.GetScreenFormatNameFromCinemaRoomID(cinemaRoomID);
         }
 
         private void showTimeDateDtimePicker_ValueChanged(object sender, EventArgs e)

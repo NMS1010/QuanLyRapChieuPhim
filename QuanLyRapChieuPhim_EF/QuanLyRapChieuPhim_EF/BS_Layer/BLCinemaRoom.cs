@@ -57,19 +57,46 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
             
             return ds;
         }
-        public static List<Tuple<string, string>> GetScreenFormats()
+        public static List<Tuple<string, string>> GetCinemaRooms()
         {
-            List<Tuple<string, string>> screenFormats = new List<Tuple<string, string>>();
-            using(CinemaManagementModel ctx = new CinemaManagementModel())
+            List<Tuple<string, string>> cinemaRooms = new List<Tuple<string, string>>();
+            using (CinemaManagementModel ctx = new CinemaManagementModel())
             {
-                IList<DinhDangManHinh> formats = (from a in ctx.DinhDangManHinhs
-                        select a).ToList();
-                foreach (DinhDangManHinh format in formats)
+                IList<PhongChieu> rooms = (from a in ctx.PhongChieux
+                                           where a.TinhTrang == 1
+                                           select a).ToList();
+                foreach (var c in rooms)
                 {
-                    screenFormats.Add(new Tuple<string, string>(format.TenDinhDang, format.MaDinhDangMH));
+                    cinemaRooms.Add(new Tuple<string, string>(c.TenPhong, c.MaPhongChieu));
                 }
             }
-            return screenFormats;
+            return cinemaRooms;
+        }
+        public static string GetCinemaRoomNameFromCinemaRoomID(string cinemaRoomID)
+        {
+            using (CinemaManagementModel ctx = new CinemaManagementModel())
+            {
+                var cinemaRoomName = (from a in ctx.PhongChieux
+                                      where a.MaPhongChieu == cinemaRoomID
+                                      select a.TenPhong).SingleOrDefault();
+                if (string.IsNullOrEmpty(cinemaRoomName))
+                    return "";
+                return cinemaRoomName;
+            }
+        }
+
+
+        public static string GetCinemaRoomIDFromShowTimeID(string showTimeID)
+        {
+            using (CinemaManagementModel ctx = new CinemaManagementModel())
+            {
+                var cinemaRoomID = (from a in ctx.SuatChieux
+                                    where a.MaSuatChieu == showTimeID
+                                    select a.MaPhongChieu).SingleOrDefault();
+                if (string.IsNullOrEmpty(cinemaRoomID))
+                    return "";
+                return cinemaRoomID;
+            }
         }
         public static bool Update(string cinemaRoomId, string cinemaRoomName, int totalChair,int cinemaRoomStatus,
             int totalNumberRowChair, int totalChairPerRow, string screenFormatID, ref string err)

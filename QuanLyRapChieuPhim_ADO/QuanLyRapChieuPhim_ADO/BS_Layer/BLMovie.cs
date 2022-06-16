@@ -29,32 +29,12 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
             foreach (DataRow row in ds.Tables[0].Rows)
             {
                 string str = "";
-                List<string> temp = GetGenreNameFromFilmID(row.ItemArray[0].ToString());
+                List<string> temp = BLGenre.GetGenreNameFromFilmID(row.ItemArray[0].ToString());
                 if(temp.Count != 0)
                     str = temp.Aggregate((i, j) => i + ", " + j);
                 row["TheLoai"] = str;
             }
             return ds;
-        }
-        public static List<string> GetGenreIDFromGenreName(string genreName)
-        {
-            return DataProvider.GetStringValuesFromSpecificColumnWithCondition("TheLoai", "MaTheLoai", $"TenTheLoai = N'{genreName}'");
-        }
-        public static List<string> GetGenreNames()
-        {
-            return DataProvider.GetStringValuesFromSpecificColumn("TheLoai", "TenTheLoai");
-        }
-        public static string GetGenreNameFromGenreID(string genreID)
-        {
-            string command = $"select TenTheLoai from TheLoai where MaTheLoai = N'{genreID}'";
-            return DataProvider.GetSingleStringValueFromQuery(command);
-        }
-        public static List<string> GetGenreNameFromFilmID(string filmID)
-        {
-            List<string> genreIDs = DataProvider.GetStringValuesFromSpecificColumnWithCondition("BoPhim_TheLoai", "MaTheLoai", $"MaBoPhim = N'{filmID}'");
-            List<string> genreNames = new List<string>();
-            genreIDs.ForEach(id => genreNames.Add(GetGenreNameFromGenreID(id)));
-            return genreNames;
         }
         public static bool Update(string filmId, string filmName, string filmDes, double totalFilmTime,
             DateTime startShow, DateTime endShow, int year, string director, string studioFilm, int movieStatus, ref string err)
@@ -99,6 +79,22 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
             bool success = DataProvider.ExecuteNonQuery(command, ref err);
             return success;
         }
+        public static string GetFilmNameFromFilmID(string filmID)
+        {
+            string command = $"select TenPhim from BoPhim where MaBoPhim = N'{filmID}'";
+            return DataProvider.GetSingleStringValueFromQuery(command);
+        }
+        public static List<Tuple<string, string>> GetFilms()
+        {
+            string command = "select TenPhim, MaBoPhim from BoPhim where TrangThai = 1";
+            DataSet ds = DataProvider.GetData(command);
+            List<Tuple<string, string>> films = new List<Tuple<string, string>>();
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                films.Add(new Tuple<string, string>(dr["TenPhim"].ToString(), dr["MaBoPhim"].ToString()));
+            }
+            return films;
+        }
         public static bool Modify_Movie_Genre(string filmId, List<string> genreNames, ref string error)
         {
             bool success = Remove_Movie_Genre(filmId, ref error);
@@ -106,7 +102,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
                 return success;
             foreach (string genreName in genreNames)
             {
-                List<string> genreIDs = GetGenreIDFromGenreName(genreName);
+                List<string> genreIDs = BLGenre.GetGenreIDFromGenreName(genreName);
                 foreach (string genreID in genreIDs)
                 {
                     string command = $"insert into BoPhim_TheLoai values('{filmId}', '{genreID}')";

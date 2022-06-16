@@ -161,6 +161,17 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
             }
             return success;
         }
+        public static string GetTicketPriceFromCinemaRoomID(string cinemaRoomID)
+        {
+            using (CinemaManagementModel ctx = new CinemaManagementModel())
+            {
+                decimal ticketPrice = (from a in ctx.PhongChieux
+                                       join b in ctx.DinhDangManHinhs on a.MaDinhDangMH equals b.MaDinhDangMH
+                                       where a.MaPhongChieu == cinemaRoomID
+                                       select b.GiaVe).SingleOrDefault();
+                return ticketPrice.ToString();
+            }
+        }
         public static bool GenerateTicket(string showTimeID, ref string error)
         {
             if (IsTicketsCreateByShowTime(showTimeID))
@@ -170,7 +181,7 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
             }
             using (CinemaManagementModel ctx = new CinemaManagementModel())
             {
-                string cinemaRoomID = BLShowTime.GetCinemaRoomIDFromShowTimeID(showTimeID);
+                string cinemaRoomID = BLCinemaRoom.GetCinemaRoomIDFromShowTimeID(showTimeID);
                 PhongChieu seatInfo = (from a in ctx.PhongChieux
                              where a.MaPhongChieu == cinemaRoomID
                              select a).SingleOrDefault();
