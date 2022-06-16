@@ -171,11 +171,16 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
             using (CinemaManagementModel ctx = new CinemaManagementModel())
             {
                 string cinemaRoomID = BLShowTime.GetCinemaRoomIDFromShowTimeID(showTimeID);
-                PhongChieu entity = (from a in ctx.PhongChieux
+                PhongChieu seatInfo = (from a in ctx.PhongChieux
                              where a.MaPhongChieu == cinemaRoomID
                              select a).SingleOrDefault();
-                int numberRows = entity.SoHangGhe;
-                int numberChairPerRow = entity.SoGheMoiHang;
+                if (seatInfo == null)
+                {
+                    error = "Phòng chiếu không hợp lệ!!!";
+                    return false;
+                }
+                int numberRows = seatInfo.SoHangGhe;
+                int numberChairPerRow = seatInfo.SoGheMoiHang;
                 string strSequence = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
                 bool success = true;
                 for (int i = 0; i < numberRows; i++)

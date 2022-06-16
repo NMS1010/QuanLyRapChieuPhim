@@ -104,6 +104,10 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
                 $" where MaSuatChieu = '{selectedShowTimeID}'";
             DataSet ds = DataProvider.GetData(command);
             Dictionary<string, string> dict = new Dictionary<string, string>();
+            if (ds.Tables[0].Rows.Count == 0)
+            {
+                return dict;
+            }
             List<string> colNames = new List<string>() { "SoHangGhe", "SoGheMoiHang", "TenPhong", "ThoiGian", "TenPhim", "ThoiLuong", "GiaVe" };
             for(int i = 0; i < colNames.Count; i++)
             {

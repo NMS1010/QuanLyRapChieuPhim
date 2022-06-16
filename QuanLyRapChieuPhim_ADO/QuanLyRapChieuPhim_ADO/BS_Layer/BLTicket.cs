@@ -59,15 +59,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
         }
         public static bool Insert(int ticketStatus, string seatID, string customerID, string showTimeID, int ticketType, decimal ticketPrice, DateTime buyDate, ref string error)
         {
-            string id = "";
-            if (customerID == "")
-            {
-                id = "NULL";
-            }
-            else
-            {
-                id = $"'{customerID}'";
-            }
+            string id = customerID != "" ? $"'{customerID}'" : "NULL";
             string command = $"insert into {tableName} values({ticketStatus}, '{seatID}', {id},'{showTimeID}', {ticketType}, {ticketPrice}, '{buyDate}')"; ;
             
             return DataProvider.ExecuteNonQuery(command, ref error);
@@ -75,15 +67,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
 
         public static bool UpdateOrderedTicket(string customerID, double ticketPrice, string seatID, int ticketType, int ticketStatus, string showID, DateTime buyDate, ref string error)
         {
-            string id = "";
-            if (customerID == "")
-            {
-                id = "NULL";
-            }
-            else
-            {
-                id = $"'{customerID}'";
-            }
+            string id = customerID != "" ? $"'{customerID}'" : "NULL";
             string command = $"update {tableName} set MaKhachHang = {id}, TrangThai = {ticketStatus}, LoaiVe = {ticketType}, TienVe = {ticketPrice}, NgayMua = '{buyDate}' where MaGhe = '{seatID}' and MaSuatChieu = '{showID}'";
             return DataProvider.ExecuteNonQuery(command, ref error);
         }
@@ -102,6 +86,11 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
             string cinemaRoomID = BLShowTime.GetCinemaRoomIDFromShowTimeID(showTimeID);
             string command = $"select SoHangGhe, SoGheMoiHang from PhongChieu where MaPhongChieu = '{cinemaRoomID}'";
             DataSet seatInfo = DataProvider.GetData(command);
+            if (seatInfo.Tables[0].Rows.Count == 0)
+            {
+                error = "Phòng chiếu không hợp lệ!!!";
+                return false;
+            }
             int numberRows = int.Parse(seatInfo.Tables[0].Rows[0]["SoHangGhe"].ToString());
             int numberChairPerRow = int.Parse(seatInfo.Tables[0].Rows[0]["SoGheMoiHang"].ToString());
             string strSequence = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

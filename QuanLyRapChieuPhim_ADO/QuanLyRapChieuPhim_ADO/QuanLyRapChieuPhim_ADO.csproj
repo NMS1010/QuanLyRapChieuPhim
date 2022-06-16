@@ -266,6 +266,7 @@
     <EmbeddedResource Include="UI_Layer\TicketUControl.resx">
       <DependentUpon>TicketUControl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ADO_CinemaManagement.cd" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\RevenueDataSet.datasource" />
     <None Include="Properties\Settings.settings">
@@ -313,6 +314,7 @@
     <None Include="Resources\cargo.png" />
     <None Include="Resources\management.png" />
     <None Include="Resources\login.png" />
+    <None Include="Resources\cinema_background.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

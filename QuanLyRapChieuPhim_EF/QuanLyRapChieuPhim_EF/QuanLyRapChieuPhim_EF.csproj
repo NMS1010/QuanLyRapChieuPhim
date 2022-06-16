@@ -287,6 +287,7 @@
     <EmbeddedResource Include="UI_Layer\TicketUControl.resx">
       <DependentUpon>TicketUControl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="EF_CinemaManagement.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -329,6 +330,7 @@
     <None Include="Resources\screen.png" />
     <None Include="Resources\showtime.png" />
     <None Include="Resources\ticket.png" />
+    <None Include="Resources\cinema_background.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

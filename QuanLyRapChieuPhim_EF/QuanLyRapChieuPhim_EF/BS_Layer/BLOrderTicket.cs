@@ -122,6 +122,8 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                                         ThoiLuong = film.ThoiLuong,
                                         GiaVe = screenFormat.GiaVe
                                     }).AsEnumerable();
+                if (showTimeInfo == null)
+                    return dict;
                 var obj = showTimeInfo.ElementAt(0);
                 List<object> vals = new List<object>() { obj.SoHangGhe, obj.SoGheMoiHang, obj.TenPhong, obj.ThoiGian, obj.TenPhim, obj.ThoiLuong, obj.GiaVe };
                 List<string> colNames = new List<string>() { "SoHangGhe", "SoGheMoiHang", "TenPhong", "ThoiGian", "TenPhim", "ThoiLuong", "GiaVe" };

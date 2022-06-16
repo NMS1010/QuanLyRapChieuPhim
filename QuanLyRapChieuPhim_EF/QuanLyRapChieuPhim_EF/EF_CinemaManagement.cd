@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLAccount" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAEAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BS_Layer\BLAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLCinemaRoom" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAEAAAEAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BS_Layer\BLCinemaRoom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLCommon" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BS_Layer\BLCommon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLCustomer" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAEAAAAAAAAIAABAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>BS_Layer\BLCustomer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLEmployee" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAEAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BS_Layer\BLEmployee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLGenre" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAEAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BS_Layer\BLGenre.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLLogin" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAIAAAAAAEAAAAQAAAAEAAAA=</HashCode>
+      <FileName>BS_Layer\BLLogin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLMovie" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABEAAEAAAAEAAAACABAEAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>BS_Layer\BLMovie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLOrderTicket" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gCABAIAAAAFJAAAAAAQAAAAAkAAAIAAAAAAIAAAAkAA=</HashCode>
+      <FileName>BS_Layer\BLOrderTicket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLRevenue" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAABCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BS_Layer\BLRevenue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLScreenFormat" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAEAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BS_Layer\BLScreenFormat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLShowTime" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBAEQgEAAAAAAAAAIABAAAABAAAAAAAAgIAASIAAA=</HashCode>
+      <FileName>BS_Layer\BLShowTime.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.BS_Layer.BLTicket" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAQEIAAAAAAAIAAAAAAAAAAAAACAAAAAAAAAAAAIA=</HashCode>
+      <FileName>BS_Layer\BLTicket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.BoPhim" Collapsed="true">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAAAgACJBAACAAIAAAAAAAABAAAAAAEAACAAA=</HashCode>
+      <FileName>DataObjects\BoPhim.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.CinemaManagementModel" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIgAAAAAAAIAAAAAAAACAAEAAAAIAAAAAAAgAGIAA=</HashCode>
+      <FileName>DataObjects\CinemaManagementModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.DinhDangManHinh" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAEAAAAAAACAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataObjects\DinhDangManHinh.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.KhachHang" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAASAAABAAAEAAAAAAABAAAAAAAAIAI=</HashCode>
+      <FileName>DataObjects\KhachHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.NhanVien" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAABACAEAAAAAAAAAAAQAAAAIAI=</HashCode>
+      <FileName>DataObjects\NhanVien.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.PhongChieu" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgEEQAAAAAAAAAAAAAEAAAAQAAAAEAAAAAACBAAA=</HashCode>
+      <FileName>DataObjects\PhongChieu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.SuatChieu" Collapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAEKAAAAAAIAAAAAAAAIAAAAAAAAACAAAA=</HashCode>
+      <FileName>DataObjects\SuatChieu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.TaiKhoan" Collapsed="true">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAEAAAAAAAAAAAAAAAIAAAAAQAAAABAA=</HashCode>
+      <FileName>DataObjects\TaiKhoan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.TheLoai" Collapsed="true">
+    <Position X="9.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAIAAAIAA=</HashCode>
+      <FileName>DataObjects\TheLoai.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.DataObjects.Ve" Collapsed="true">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAgAAEAAAAAAAAAICAAAAAIAEAABAgAAAAIAAAA=</HashCode>
+      <FileName>DataObjects\Ve.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.DBConnect.DBConnection" Collapsed="true">
+    <Position X="12.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAIAAAAAAAAABACAAAAABAAA=</HashCode>
+      <FileName>DBConnect\DBConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.LoginForm" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAACAAABAAAACAAABCIAQAAAACEAAAAQBgBAA=</HashCode>
+      <FileName>LoginForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.Program" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.RevenueDataSet" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAIAAAAAwAAAAJABAAAQAAAAAgCYBgAAAAAAAEABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.RevenueReportForm" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UAAAAAIAACAAAAEAACiAAAACAAAAAAACAAAIAAAAAAA=</HashCode>
+      <FileName>RevenueReportForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.Utilities" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAACAIAAAIAAAECAAECAAACACAACAAgECAAAAA=</HashCode>
+      <FileName>Utilities.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.Properties.Resources" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAQAwAAIAAQEIAAAJEAQCAQAAQAAAAAQAQQgAEIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.Properties.Settings" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAEAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.RevenueDataSetTableAdapters.DoanhThuTableAdapter" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EACAAGAAEAAAAAcAIAAAAAAAACAICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.RevenueDataSetTableAdapters.TableAdapterManager" Collapsed="true">
+    <Position X="5.75" Y="5.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="QuanLyRapChieuPhim_EF.RevenueDataSetTableAdapters.TableAdapterManager.UpdateOrderOption" Collapsed="true">
+        <TypeIdentifier />
+      </Enum>
+      <Class Name="QuanLyRapChieuPhim_EF.RevenueDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer" Collapsed="true">
+        <TypeIdentifier />
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AQAAACAAAABABAEBAAAAMAAgAAACgAAAAAQAAAAABAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SqlServerTypes.Utilities" Collapsed="true">
+    <Position X="12.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAQAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>SqlServerTypes\Loader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.UI_Layer.AccountUControl" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iBAAAkBARCCAiNFAcACAAEgCAAKAACAECIAQAQAIBAA=</HashCode>
+      <FileName>UI_Layer\AccountUControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.UI_Layer.AvaialbleShowTimeUControl" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EFAEAQgAESAAQBCgQBCASBACAACAgAAsIAAAIAIEECA=</HashCode>
+      <FileName>UI_Layer\AvaialbleShowTimeUControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.UI_Layer.BuyTicketUControl" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EJEkAIAEACAgBVkIAACAQh4CCwIAhAwAkBCBASUAUAg=</HashCode>
+      <FileName>UI_Layer\BuyTicketUControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.UI_Layer.CinemaDataManagerUControl" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAEDCAAAAAAQKEAEAGAAAAAAAoAQAAAEBAAAw=</HashCode>
+      <FileName>UI_Layer\CinemaDataManagerUControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.UI_Layer.CinemaRoomUControl" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CBAAAkgQRDKAANEAMALQAEgDEACAACAEBKIAAQSBACA=</HashCode>
+      <FileName>UI_Layer\CinemaRoomUControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.UI_Layer.CustomerUControl" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CBAAAkoARCCAANFSMECBCEgGgACAACCFQKAgAQIAIEI=</HashCode>
+      <FileName>UI_Layer\CustomerUControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.UI_Layer.DashBoard" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAARAABAASAIAjAABAKAAAgGAABAAAAAAwAIgQACCEA=</HashCode>
+      <FileName>UI_Layer\DashBoard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.UI_Layer.DataBaseSettingForm" Collapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAABCAAABAAAACAAAACAAAAAAADAMAAAAAAAAA=</HashCode>
+      <FileName>UI_Layer\DataBaseSettingForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.UI_Layer.EmployeeUControl" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CBAAAkoARCCAANNQMACBCEgGAACIACCHAKAwAQAAIAI=</HashCode>
+      <FileName>UI_Layer\EmployeeUControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.UI_Layer.GenreUControl" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAkQARKCAANEAMACCAEgCAACACCAEAKAAIQAAMAA=</HashCode>
+      <FileName>UI_Layer\GenreUControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.UI_Layer.ManagerForm" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgAEAAAAACAAABAAAACAAEADgEAAAAAgAAAACCAAAAA=</HashCode>
+      <FileName>UI_Layer\ManagerForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.UI_Layer.MovieUControl" Collapsed="true">
+    <Position X="12.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>OBAQAkABRCiACNFAMDCgIGgKAgCGADBECOgAEQIAASg=</HashCode>
+      <FileName>UI_Layer\MovieUControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.UI_Layer.RevenueUControl" Collapsed="true">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABBAkIAACCACJAAADCxAAwCAAQBQCQACCAAIACAAAI=</HashCode>
+      <FileName>UI_Layer\RevenueUControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.UI_Layer.ScreenUControl" Collapsed="true">
+    <Position X="12.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAkEERCCAANGAMACQCEgCAACAACBEAKAAAQACAAg=</HashCode>
+      <FileName>UI_Layer\ScreenUControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.UI_Layer.ShowTimeUControl" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CBAAAkAARSCIANGAOCCpiEhCAACAkCgUAKCkEQAAAAI=</HashCode>
+      <FileName>UI_Layer\ShowTimeUControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuanLyRapChieuPhim_EF.UI_Layer.TicketUControl" Collapsed="true">
+    <Position X="11" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kBAABAAAAWAAihAACgCICAgCiACAmAABAgCEAAIAAAA=</HashCode>
+      <FileName>UI_Layer\TicketUControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="QuanLyRapChieuPhim_EF.Enum.ACCOUNT_ROLE" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enum\ACCOUNT_ROLE.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="QuanLyRapChieuPhim_EF.Enum.BONUS_POINT" Collapsed="true">
+    <Position X="2.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enum\BONUS_POINT.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="QuanLyRapChieuPhim_EF.Enum.SALE" Collapsed="true">
+    <Position X="4" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enum\SALE.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
