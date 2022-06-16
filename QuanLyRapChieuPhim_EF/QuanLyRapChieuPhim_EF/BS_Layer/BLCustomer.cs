@@ -67,10 +67,10 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                         ctx.SaveChanges();
                     }
                 }
-                catch (EntitySqlException e)
+                catch (Exception e)
                 {
                     success = false;
-                    err = e.Message;
+                    err = e.InnerException.ToString();
                 }
             }
             return success;
@@ -87,10 +87,10 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                     ctx.KhachHangs.Add(customer);
                     ctx.SaveChanges();
                 }
-                catch (EntitySqlException e)
+                catch (Exception e)
                 {
                     success = false;
-                    err = e.Message;
+                    err = e.InnerException.ToString();
                 }
             }
             return success;
@@ -110,10 +110,10 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                         ctx.SaveChanges();
                     }
                 }
-                catch (EntitySqlException e)
+                catch (Exception e)
                 {
                     success = false;
-                    err = e.Message;
+                    err = e.InnerException.ToString();
                 }
             }
             return success;
@@ -152,10 +152,10 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                     ctx.KhachHangs.Remove(customer);
                     ctx.SaveChanges();
                 }
-                catch (EntitySqlException e)
+                catch (Exception e)
                 {
                     success = false;
-                    err = e.Message;
+                    err = e.InnerException.ToString();
                 }
             }
             return success;

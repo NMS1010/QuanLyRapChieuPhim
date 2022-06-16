@@ -46,10 +46,10 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                     }
                     UserName = entity.TenTaiKhoan.ToString();
                 }
-                catch (EntitySqlException e)
+                catch (Exception e)
                 {
                     success = false;
-                    error = e.Message;
+                    error = e.InnerException.ToString();
                 }
                 
             }

@@ -27,7 +27,8 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
             {
                 row[i] = GetScreenFormatNameFromID(row.ItemArray[i].ToString());
             }
-            ds.Tables[0].Columns[i].ColumnName = "LoaiManHinh";
+            if(i != -1)
+                ds.Tables[0].Columns[i].ColumnName = "LoaiManHinh";
             return ds;
         }
         public static string GetScreenFormatNameFromID(string screenFormatID)

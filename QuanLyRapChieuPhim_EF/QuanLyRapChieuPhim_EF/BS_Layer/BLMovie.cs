@@ -160,20 +160,20 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                                     ctx.SaveChanges();
                                 }
                             }
-                            catch (EntitySqlException e)
+                            catch (Exception e)
                             {
                                 success = false;
-                                err = e.Message;
+                                err = e.InnerException.ToString();
                             }
                             if (!success)
                                 return success;
                         }
                     }
                 }
-                catch (EntitySqlException e)
+                catch (Exception e)
                 {
                     success = false;
-                    err = e.Message;
+                    err = e.InnerException.ToString();
                 }
 
             }
@@ -196,10 +196,10 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                     ctx.BoPhims.Add(movie);
                     ctx.SaveChanges();
                 }
-                catch (EntitySqlException e)
+                catch (Exception e)
                 {
                     success = false;
-                    err = e.Message;
+                    err = e.InnerException.ToString();
                 }
             }
             return success;
@@ -228,10 +228,10 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                         }
                     }
                 }
-                catch (EntitySqlException e)
+                catch (Exception e)
                 {
                     success = false;
-                    error = e.Message;
+                    error = e.InnerException.ToString();
                 }
             }
             return success;
@@ -249,10 +249,10 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                     ctx.BoPhims.Remove(film);
                     ctx.SaveChanges();
                 }
-                catch (EntitySqlException e)
+                catch (Exception e)
                 {
                     success = false;
-                    err = e.Message;
+                    err = e.InnerException.ToString();
                 }
             }
             return success;

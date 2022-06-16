@@ -59,28 +59,32 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
         }
         public static bool Insert(int ticketStatus, string seatID, string customerID, string showTimeID, int ticketType, decimal ticketPrice, DateTime buyDate, ref string error)
         {
-            string command;
-            if (String.IsNullOrEmpty(customerID))
+            string id = "";
+            if (customerID == "")
             {
-                command = $"insert into {tableName} (TrangThai, MaGhe, MaSuatChieu, LoaiVe, TienVe) values({ticketStatus}, '{seatID}', '{showTimeID}', {ticketType}, {ticketPrice})";
+                id = "NULL";
             }
             else
             {
-                command = $"insert into {tableName} values({ticketStatus}, '{seatID}', '{customerID}','{showTimeID}', {ticketType}, {ticketPrice}, '{buyDate}')";
-
+                id = $"'{customerID}'";
             }
+            string command = $"insert into {tableName} values({ticketStatus}, '{seatID}', {id},'{showTimeID}', {ticketType}, {ticketPrice}, '{buyDate}')"; ;
+            
             return DataProvider.ExecuteNonQuery(command, ref error);
         }
 
         public static bool UpdateOrderedTicket(string customerID, double ticketPrice, string seatID, int ticketType, int ticketStatus, string showID, DateTime buyDate, ref string error)
         {
-            string command;
-            if(customerID == "")
+            string id = "";
+            if (customerID == "")
             {
-                command = $"update {tableName} set TrangThai = {ticketStatus}, LoaiVe = {ticketType}, TienVe = {ticketPrice}, NgayMua = '{buyDate}' where MaGhe = '{seatID}' and MaSuatChieu = '{showID}'";
+                id = "NULL";
             }
             else
-                command = $"update {tableName} set MaKhachHang = '{customerID}', TrangThai = {ticketStatus}, LoaiVe = {ticketType}, TienVe = {ticketPrice}, NgayMua = '{buyDate}' where MaGhe = '{seatID}' and MaSuatChieu = '{showID}'";
+            {
+                id = $"'{customerID}'";
+            }
+            string command = $"update {tableName} set MaKhachHang = {id}, TrangThai = {ticketStatus}, LoaiVe = {ticketType}, TienVe = {ticketPrice}, NgayMua = '{buyDate}' where MaGhe = '{seatID}' and MaSuatChieu = '{showID}'";
             return DataProvider.ExecuteNonQuery(command, ref error);
         }
         public static bool RemoveAllTicketByShowTime(string showTimeID, ref string error)

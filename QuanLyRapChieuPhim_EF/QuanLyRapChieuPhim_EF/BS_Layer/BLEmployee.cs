@@ -65,10 +65,10 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                         ctx.SaveChanges();
                     }
                 }
-                catch (EntitySqlException e)
+                catch (Exception e)
                 {
                     success = false;
-                    err = e.Message;
+                    err = e.InnerException.ToString();
                 }
             }
             return success;
@@ -85,10 +85,10 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                     ctx.NhanViens.Add(employee);
                     ctx.SaveChanges();
                 }
-                catch (EntitySqlException e)
+                catch (Exception e)
                 {
                     success = false;
-                    err = e.Message;
+                    err = e.InnerException.ToString();
                 }
             }
             return success;
@@ -107,10 +107,10 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                     ctx.NhanViens.Remove(employee);
                     ctx.SaveChanges();
                 }
-                catch (EntitySqlException e)
+                catch (Exception e)
                 {
                     success = false;
-                    err = e.Message;
+                    err = e.InnerException.ToString();
                 }
             }
             return success;

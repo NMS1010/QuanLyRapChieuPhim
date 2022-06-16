@@ -93,9 +93,15 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
             bool success = DataProvider.ExecuteNonQuery(command, ref err);
             return success;
         }
+        public static bool Remove_Movie_Genre(string filmId, ref string err)
+        {
+            string command = $"delete from BoPhim_TheLoai where MaBoPhim = '{filmId}';";
+            bool success = DataProvider.ExecuteNonQuery(command, ref err);
+            return success;
+        }
         public static bool Modify_Movie_Genre(string filmId, List<string> genreNames, ref string error)
         {
-            bool success = BLCommon.Remove_Movie_Genre(filmId, ref error);
+            bool success = Remove_Movie_Genre(filmId, ref error);
             if (!success)
                 return success;
             foreach (string genreName in genreNames)

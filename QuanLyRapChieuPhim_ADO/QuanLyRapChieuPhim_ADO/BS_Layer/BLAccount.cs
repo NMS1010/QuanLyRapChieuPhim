@@ -26,14 +26,16 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
         public static bool Update(string userName, string passWord, int employeeID,
             int accountType, ref string err)
         {
-            string command;
-            if (employeeID <= 0)
+            string id;
+            if (employeeID > 0)
             {
-                command = $"update {tableName} set MatKhau = N'{passWord}', LoaiTaiKhoan = N'{accountType}' " +
-                    $" where TenTaiKhoan = N'{userName}'; ";
+                id = $"{employeeID}";
             }
             else
-                command = $"update {tableName} set MatKhau = N'{passWord}', MaNhanVien = {employeeID}, LoaiTaiKhoan = N'{accountType}' " +
+            {
+                id = "NULL";
+            }
+            string command = $"update {tableName} set MatKhau = N'{passWord}', MaNhanVien = {id}, LoaiTaiKhoan = N'{accountType}' " +
                     $" where TenTaiKhoan = N'{userName}'; ";
             bool success = DataProvider.ExecuteNonQuery(command, ref err);
             return success;
@@ -41,15 +43,16 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
         public static bool Insert(string userName, string passWord, int employeeID,
             int accountType, ref string err)
         {
-            string command;
-            if (employeeID <= 0)
+            string id;
+            if (employeeID > 0)
             {
-                command = $"insert into {tableName} (TenTaiKhoan, MatKhau, LoaiTaiKhoan) values( N'{userName}',N'{passWord}',N'{accountType}');";
+                id = $"{employeeID}";
             }
             else
             {
-                command = $"insert into {tableName} (TenTaiKhoan, MatKhau, MaNhanVien, LoaiTaiKhoan) values( N'{userName}',N'{passWord}',{employeeID},N'{accountType}');";
+                id = "NULL";
             }
+            string command = $"insert into {tableName} (TenTaiKhoan, MatKhau, MaNhanVien, LoaiTaiKhoan) values( N'{userName}',N'{passWord}',{id},N'{accountType}');";
             bool success = DataProvider.ExecuteNonQuery(command, ref err);
             return success;
         }

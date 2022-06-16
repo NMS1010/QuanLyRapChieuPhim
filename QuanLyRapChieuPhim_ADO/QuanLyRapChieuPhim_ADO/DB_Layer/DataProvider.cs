@@ -41,6 +41,7 @@ namespace QuanLyRapChieuPhim_ADO.DB_Layer
             catch (SqlException s)
             {
                 MessageBox.Show(s.Message);
+                ds.Tables.Add(new DataTable());
             }
             finally
             {

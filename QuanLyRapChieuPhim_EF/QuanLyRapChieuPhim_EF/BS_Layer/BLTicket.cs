@@ -103,7 +103,7 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                 catch(Exception e)
                 {
                     success = false;
-                    error = e.Message;
+                    error = e.InnerException.ToString();
                 }
             }
             return success;
@@ -131,7 +131,7 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                 catch (Exception e)
                 {
                     success = false;
-                    error = e.Message;
+                    error = e.InnerException.ToString();
                 }
             }
             return success;
@@ -156,7 +156,7 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                 catch (Exception e)
                 {
                     success = false;
-                    error = e.Message;
+                    error = e.InnerException.ToString();
                 }
             }
             return success;

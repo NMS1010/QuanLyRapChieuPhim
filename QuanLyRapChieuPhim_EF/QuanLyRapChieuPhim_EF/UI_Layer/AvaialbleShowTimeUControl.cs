@@ -68,6 +68,7 @@ namespace QuanLyRapChieuPhim_EF.UI_Layer
         {
             if (!BLCustomer.ContainCustomer(customerID.ToString()) && cumulatePointCkb.Checked) {
                 MessageBox.Show("Khách hàng không tồn tại!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                customerID = 0;
                 return;
             }
             BLOrderTicket.CustomerID = customerID != 0 ?customerID.ToString() : "";

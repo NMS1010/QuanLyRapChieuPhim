@@ -14,11 +14,5 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
             string command = $"update {tableName} set {column} = {stateValue} where {condition}";
             return DataProvider.ExecuteNonQuery(command, ref err);
         }
-        public static bool Remove_Movie_Genre(string filmId, ref string err)
-        {
-            string command = $"delete from BoPhim_TheLoai where MaBoPhim = '{filmId}';";
-            bool success = DataProvider.ExecuteNonQuery(command, ref err);
-            return success;
-        }
     }
 }

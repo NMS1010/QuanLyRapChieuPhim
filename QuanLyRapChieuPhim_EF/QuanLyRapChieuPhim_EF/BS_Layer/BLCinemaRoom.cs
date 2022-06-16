@@ -51,17 +51,12 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                     string screenFormatID = row.ItemArray[i].ToString();
                     row[i] = ctx.DinhDangManHinhs.SingleOrDefault(d => d.MaDinhDangMH == screenFormatID)?.TenDinhDang;
                 }
-                ds.Tables[0].Columns[i].ColumnName = "LoaiManHinh";
+                if(i != -1)
+                    ds.Tables[0].Columns[i].ColumnName = "LoaiManHinh";
             }
             
             return ds;
         }
-        //public static string GetScreenFormatNameFromID(string screenFormatID)
-        //{
-        //    string command = $"select TenDinhDang " +
-        //        $"from DinhDangManHinh where MaDinhDangMH = '{screenFormatID}'";
-        //    return DataProvider.GetSingleStringValueFromQuery(command);
-        //}
         public static List<Tuple<string, string>> GetScreenFormats()
         {
             List<Tuple<string, string>> screenFormats = new List<Tuple<string, string>>();
@@ -112,20 +107,20 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                                     ctx.SaveChanges();
                                 }
                             }
-                            catch (EntitySqlException e)
+                            catch (Exception e)
                             {
                                 success = false;
-                                err = e.Message;
+                                err = e.InnerException.ToString();
                             }
                             if (!success)
                                 return success;
                         }
                     }
                 }
-                catch (EntitySqlException e)
+                catch (Exception e)
                 {
                     success = false;
-                    err = e.Message;
+                    err = e.InnerException.ToString();
                 }
                 
             }
@@ -143,10 +138,10 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                     ctx.PhongChieux.Add(cinemaRoom);
                     ctx.SaveChanges();
                 }
-                catch (EntitySqlException e)
+                catch (Exception e)
                 {
                     success = false;
-                    err = e.Message;
+                    err = e.InnerException.ToString();
                 }
             }
             return success;
@@ -164,10 +159,10 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                     ctx.PhongChieux.Remove(cinemaRoom);
                     ctx.SaveChanges();
                 }
-                catch (EntitySqlException e)
+                catch (Exception e)
                 {
                     success = false;
-                    err = e.Message;
+                    err = e.InnerException.ToString();
                 }
             }
             return success;
