@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -34,7 +35,15 @@ namespace QuanLyRapChieuPhim_ADO
             doanhThuTableAdapter = new RevenueDataSetTableAdapters.DoanhThuTableAdapter();
             doanhThuTableAdapter.Connection.Close();
             doanhThuTableAdapter.Connection.ConnectionString = DataProvider.StrConnection;
-            doanhThuTableAdapter.Connection.Open();
+            try
+            {
+                doanhThuTableAdapter.Connection.Open();
+            }
+            catch (SqlException err)
+            {
+                MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             doanhThuTableAdapter.Fill(revenueDataSet.DoanhThu, filmID, startDate.ToShortDateString(), endDate.ToShortDateString());
             ReportParameter[] parameter = new ReportParameter[3]; 
             parameter[0] = new ReportParameter("startDate", startDate.ToShortDateString());

@@ -14,13 +14,14 @@ namespace QuanLyRapChieuPhim_EF.DBConnect
     {
         public static string ServerName = "MINHSON\\MINHSON";
         public static string DatabaseName = "QuanLyRapChieuPhim";
-        public static string ConnectionString = $"data source={ServerName};initial catalog={DatabaseName};integrated security=True;multipleactiveresultsets=True;application name=EntityFramework;Persist Security Info = True";
+        public static string ConnectionString;
         private static void Connect()
         {
+            ConnectionString = $"data source={ServerName};initial catalog={DatabaseName};integrated security=True;multipleactiveresultsets=True;application name=EntityFramework;Persist Security Info = True";
             var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
-            connectionStringsSection.ConnectionStrings["CinemaManagementModel"].ConnectionString = ConnectionString;
-            config.Save();
+            config.ConnectionStrings.ConnectionStrings["CinemaManagementModel"].ConnectionString = ConnectionString;
+            config.ConnectionStrings.ConnectionStrings["CinemaManagementModel"].ProviderName = "System.Data.SqlClient";
+            config.Save(ConfigurationSaveMode.Full);
             ConfigurationManager.RefreshSection("connectionStrings");
         }
         public static bool CheckConnectDB()
@@ -28,8 +29,8 @@ namespace QuanLyRapChieuPhim_EF.DBConnect
             bool success = true;
             try
             {
-                SqlConnection DBconnection = new SqlConnection(ConnectionString);
                 Connect();
+                SqlConnection DBconnection = new SqlConnection(ConfigurationManager.ConnectionStrings["CinemaManagementModel"].ConnectionString);
                 DBconnection.Open();
             }
             catch (SqlException e)
