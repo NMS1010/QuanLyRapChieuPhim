@@ -1,1 +1,5 @@
-# Ứng dụng Quản lý rạp chiếu phim - Mô hình 3 tầng
+# Cinema Management - 3 Layer
+
+To run this application:
+1. Run QLCRP.sql in DataBase folder to create the QuanLyRapChieuPhim database
+2. Update Microsoft.SqlServer.Types if an error occured (missing required file)
