@@ -59,22 +59,11 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
             }
             return ds;
         }
-        
-        
-        
-        
-        
-        
-
-        
-        
         public static bool CheckCinemaRoomAndMovie(string filmID, string cinemaRoomID, ref string error)
         {
             using (CinemaManagementModel ctx = new CinemaManagementModel())
             {
-                var entity = (from showtime in ctx.SuatChieux
-                              join film in ctx.BoPhims on showtime.MaBoPhim equals film.MaBoPhim
-                              join room in ctx.PhongChieux on showtime.MaPhongChieu equals room.MaPhongChieu
+                var entity = (from room in ctx.PhongChieux
                               where room.MaPhongChieu == cinemaRoomID
                               select new
                               {
@@ -88,9 +77,7 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                         return false;
                     }
                 }
-                var entity2 = (from showtime in ctx.SuatChieux
-                          join film in ctx.BoPhims on showtime.MaBoPhim equals film.MaBoPhim
-                          join room in ctx.PhongChieux on showtime.MaPhongChieu equals room.MaPhongChieu
+                var entity2 = (from film in ctx.BoPhims
                           where film.MaBoPhim == filmID
                           select new
                           {

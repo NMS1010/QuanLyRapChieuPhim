@@ -61,11 +61,10 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
         public static bool CheckCinemaRoomAndMovie(string filmID, string cinemaRoomID, ref string error)
         {
             string command = $"select BoPhim.TrangThai as TrangThai " +
-                $"from SuatChieu inner join BoPhim on SuatChieu.MaBoPhim = BoPhim.MaBoPhim " +
-                $"inner join PhongChieu on SuatChieu.MaPhongChieu = PhongChieu.MaPhongChieu " +
+                $"from BoPhim " +
                 $"where BoPhim.MaBoPhim = '{filmID}'";
             DataSet ds = DataProvider.GetData(command);
-            foreach(DataRow row in ds.Tables[0].Rows)
+            foreach (DataRow row in ds.Tables[0].Rows)
             {
                 if (row["TrangThai"].ToString() == "0")
                 {
@@ -74,8 +73,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
                 }
             }
             command = $"select PhongChieu.TinhTrang as TinhTrang " +
-                $"from SuatChieu inner join BoPhim on SuatChieu.MaBoPhim = BoPhim.MaBoPhim " +
-                $"inner join PhongChieu on SuatChieu.MaPhongChieu = PhongChieu.MaPhongChieu " +
+                $"from PhongChieu " +
                 $"where PhongChieu.MaPhongChieu = '{cinemaRoomID}'";
             ds = DataProvider.GetData(command);
             foreach (DataRow row in ds.Tables[0].Rows)
