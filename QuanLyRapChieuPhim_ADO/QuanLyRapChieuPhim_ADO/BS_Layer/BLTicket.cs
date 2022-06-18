@@ -25,7 +25,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
         }
         public static bool IsTicketsCreateByShowTime(string showTimeID)
         {
-            List<string> values = DataProvider.GetStringValuesFromSpecificColumnWithCondition("Ve", "MaVe", $"MaSuatChieu = '{showTimeID}'");
+            List<string> values = DataProvider.GetStringValuesFromSpecificColumnWithCondition(tableName, "MaVe", $"MaSuatChieu = '{showTimeID}'");
             if (values.Count == 0)
                 return false;
             return true;

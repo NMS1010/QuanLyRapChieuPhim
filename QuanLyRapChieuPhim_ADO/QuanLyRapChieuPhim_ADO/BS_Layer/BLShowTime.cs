@@ -38,8 +38,8 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
                 {
                     price = "0";
                     string error = "";
-                    bool b = BLCommon.UpdateState("TrangThai", "SuatChieu", 0, $"MaSuatChieu = '{row["MaSuatChieu"]}'", ref error);
-                    row["TrangThai"] = DataProvider.GetSingleStringValueFromQuery($"select TrangThai from SuatChieu where MaSuatChieu = '{row["MaSuatChieu"]}'");
+                    bool b = BLCommon.UpdateState("TrangThai", tableName, 0, $"MaSuatChieu = '{row["MaSuatChieu"]}'", ref error);
+                    row["TrangThai"] = DataProvider.GetSingleStringValueFromQuery($"select TrangThai from {tableName} where MaSuatChieu = '{row["MaSuatChieu"]}'");
                     if (!b)
                         continue;
                 }
@@ -158,7 +158,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
         
         public static bool Remove(string showTimeId, ref string err)
         {
-            string command = $"delete from SuatChieu where MaSuatChieu = '{showTimeId}'";
+            string command = $"delete from {tableName} where MaSuatChieu = '{showTimeId}'";
             bool success = DataProvider.ExecuteNonQuery(command, ref err);
             return success;
         }

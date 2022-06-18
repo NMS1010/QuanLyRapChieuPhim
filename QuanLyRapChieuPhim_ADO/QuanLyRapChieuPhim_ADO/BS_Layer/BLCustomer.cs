@@ -45,7 +45,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
         }
         public static bool ContainCustomer(string customerID)
         {
-            string command = $"select MaKhachHang from KhachHang where MaKhachHang = '{customerID}'";
+            string command = $"select MaKhachHang from {tableName} where MaKhachHang = '{customerID}'";
             string res = DataProvider.GetSingleStringValueFromQuery(command);
             if (res == "")
                 return false;
@@ -53,7 +53,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
         }
         public static bool Remove(string customerID, ref string err)
         {
-            string command = $"delete from KhachHang where MaKhachHang = '{customerID}'";
+            string command = $"delete from {tableName} where MaKhachHang = '{customerID}'";
             bool success = DataProvider.ExecuteNonQuery(command, ref err);
             return success;
         }

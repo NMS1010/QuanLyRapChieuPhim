@@ -23,7 +23,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
         }
         public static string GetScreenFormatNameFromScreenFormatID(string screenFormatID)
         {
-            string command = $"select TenDinhDang from DinhDangManHinh where MaDinhDangMH = N'{screenFormatID}'";
+            string command = $"select TenDinhDang from {tableName} where MaDinhDangMH = N'{screenFormatID}'";
             return DataProvider.GetSingleStringValueFromQuery(command);
         }
         public static string GetScreenFormatNameFromCinemaRoomID(string cinemaRoomID)
@@ -38,7 +38,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
         }
         public static List<Tuple<string, string>> GetScreenFormats()
         {
-            string command = $"select TenDinhDang, MaDinhDangMH from DinhDangManHinh";
+            string command = $"select TenDinhDang, MaDinhDangMH from {tableName}";
             DataSet ds = DataProvider.GetData(command);
             List<Tuple<string, string>> screenFormats = new List<Tuple<string, string>>();
             foreach (DataRow dr in ds.Tables[0].Rows)
@@ -65,7 +65,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
             bool success = BLCommon.UpdateState("TinhTrang", "PhongChieu", 0, $"MaDinhDangMH = '{screenFormatID}'", ref err);
             if (!success)
                 return success;
-            string command = $"delete from DinhDangManHinh where MaDinhDangMH = '{screenFormatID}'";
+            string command = $"delete from {tableName} where MaDinhDangMH = '{screenFormatID}'";
             success = DataProvider.ExecuteNonQuery(command, ref err);
             return success;
         }

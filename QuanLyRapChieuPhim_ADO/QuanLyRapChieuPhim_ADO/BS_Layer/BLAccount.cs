@@ -43,7 +43,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
 
         public static bool Remove(string userName, ref string err)
         {
-            string command = $"delete from TaiKhoan where TenTaiKhoan = '{userName}'";
+            string command = $"delete from {tableName} where TenTaiKhoan = '{userName}'";
             return DataProvider.ExecuteNonQuery(command, ref err);
         }
     }

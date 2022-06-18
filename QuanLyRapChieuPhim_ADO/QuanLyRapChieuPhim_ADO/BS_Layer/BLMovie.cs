@@ -81,12 +81,12 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
         }
         public static string GetFilmNameFromFilmID(string filmID)
         {
-            string command = $"select TenPhim from BoPhim where MaBoPhim = N'{filmID}'";
+            string command = $"select TenPhim from {tableName} where MaBoPhim = N'{filmID}'";
             return DataProvider.GetSingleStringValueFromQuery(command);
         }
         public static List<Tuple<string, string>> GetFilms()
         {
-            string command = "select TenPhim, MaBoPhim from BoPhim";
+            string command = $"select TenPhim, MaBoPhim from {tableName}";
             DataSet ds = DataProvider.GetData(command);
             List<Tuple<string, string>> films = new List<Tuple<string, string>>();
             foreach (DataRow dr in ds.Tables[0].Rows)
@@ -116,7 +116,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
         
         public static bool Remove(string filmId, ref string err)
         {
-            string command = $"delete from BoPhim where MaBoPhim = '{filmId}'";
+            string command = $"delete from {tableName} where MaBoPhim = '{filmId}'";
             bool success = DataProvider.ExecuteNonQuery(command, ref err);
             return success;
         }

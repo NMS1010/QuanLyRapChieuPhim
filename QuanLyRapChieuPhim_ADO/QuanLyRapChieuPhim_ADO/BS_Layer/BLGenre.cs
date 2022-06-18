@@ -25,15 +25,15 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
 
         public static List<string> GetGenreIDFromGenreName(string genreName)
         {
-            return DataProvider.GetStringValuesFromSpecificColumnWithCondition("TheLoai", "MaTheLoai", $"TenTheLoai = N'{genreName}'");
+            return DataProvider.GetStringValuesFromSpecificColumnWithCondition(tableName, "MaTheLoai", $"TenTheLoai = N'{genreName}'");
         }
         public static List<string> GetGenreNames()
         {
-            return DataProvider.GetStringValuesFromSpecificColumn("TheLoai", "TenTheLoai");
+            return DataProvider.GetStringValuesFromSpecificColumn(tableName, "TenTheLoai");
         }
         public static string GetGenreNameFromGenreID(string genreID)
         {
-            string command = $"select TenTheLoai from TheLoai where MaTheLoai = N'{genreID}'";
+            string command = $"select TenTheLoai from {tableName} where MaTheLoai = N'{genreID}'";
             return DataProvider.GetSingleStringValueFromQuery(command);
         }
         public static List<string> GetGenreNameFromFilmID(string filmID)
@@ -58,7 +58,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
 
         public static bool Remove(string genreId, ref string err)
         {
-            string command = $"delete from TheLoai where MaTheLoai = '{genreId}';";
+            string command = $"delete from {tableName} where MaTheLoai = '{genreId}';";
             bool success = DataProvider.ExecuteNonQuery(command, ref err);
             return success;
         }

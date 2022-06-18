@@ -40,7 +40,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
 
         public static string GetCinemaRoomIDFromShowTimeID(string showTimeID)
         {
-            string command = $"select MaPhongChieu from {tableName} where MaSuatChieu = N'{showTimeID}'";
+            string command = $"select MaPhongChieu from SuatChieu where MaSuatChieu = N'{showTimeID}'";
             return DataProvider.GetSingleStringValueFromQuery(command);
         }
         public static List<Tuple<string, string>> GetCinemaRooms()
@@ -90,7 +90,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
 
         public static bool Remove(string cinemaRoomId, ref string err)
         {
-            string command = $"delete from PhongChieu where MaPhongChieu = '{cinemaRoomId}';";
+            string command = $"delete from {tableName} where MaPhongChieu = '{cinemaRoomId}';";
             bool success = DataProvider.ExecuteNonQuery(command, ref err);
             return success;
         }
