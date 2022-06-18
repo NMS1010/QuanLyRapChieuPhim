@@ -49,7 +49,7 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                 catch (Exception e)
                 {
                     success = false;
-                    error = e.InnerException.ToString();
+                    error = e.Message;
                 }
                 
             }

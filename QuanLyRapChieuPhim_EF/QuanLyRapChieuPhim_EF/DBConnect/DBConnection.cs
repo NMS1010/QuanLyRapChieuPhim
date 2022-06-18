@@ -21,7 +21,7 @@ namespace QuanLyRapChieuPhim_EF.DBConnect
             var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
             connectionStringsSection.ConnectionStrings["CinemaManagementModel"].ConnectionString = ConnectionString;
             config.Save();
-            ConfigurationManager.RefreshSection("CinemaManagementModel");
+            ConfigurationManager.RefreshSection("connectionStrings");
         }
         public static bool CheckConnectDB()
         {
