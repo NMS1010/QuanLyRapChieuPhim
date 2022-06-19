@@ -159,7 +159,7 @@ namespace QuanLyRapChieuPhim_ADO.UI_Layer
                 string error = "";
                 double ticketPrice = double.Parse(totalPriceTxb.Text) / totalSelectedSeat;
                 bool success = BLOrderTicket.UpdateBoughtTicket(selectedTickets, ticketType, ticketPrice, DateTime.Now, ref error);
-                if (success)
+                if (success && BLOrderTicket.CustomerID != "")
                 {
                     success = BLCustomer.UpdatePoint(BLOrderTicket.CustomerID, selectedTickets.Count * (int)BONUS_POINT.POINT, ref error);
                 }
