@@ -69,20 +69,19 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
         {
             filmName = filmName.ToLower();
             DataSet data = GetRevenueData(DateTime.MinValue, DateTime.MaxValue);
-            
+            DataSet ds = data.Clone();
             for (int i = 0; i < data.Tables[0].Rows.Count; i++)
             {
                 DataRow r = data.Tables[0].Rows[i];
                 string temp = r["TenPhim"].ToString().ToLower();
-                if (!temp.Contains(filmName))
+                if (temp.Contains(filmName))
                 {
-                    r.Delete();
+                    ds.Tables[0].Rows.Add(r.ItemArray);
                 }
             }
-            data.Tables[0].AcceptChanges();
             RevenueDataSet = new DataSet();
             RevenueDataSet = data.Copy();
-            return data;
+            return ds;
         }
     }
 }

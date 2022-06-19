@@ -31,7 +31,6 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                     if (r["TrangThai"].ToString() == "0" || e == null)
                     {
                         r.Delete();
-                        i--;
                     }
                 }
                 
@@ -51,38 +50,32 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
 
         public static DataSet GetDataByDate(DateTime d)
         {
-            DataSet ds = new DataSet();
-            ds.Merge(DataShowTime);
-            for(int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            DataSet ds = DataShowTime.Clone();
+            for(int i = 0; i < DataShowTime.Tables[0].Rows.Count; i++)
             {
-                DataRow r = ds.Tables[0].Rows[i];
+                DataRow r = DataShowTime.Tables[0].Rows[i];
                 DateTime temp = (DateTime)r["NgayChieu"];
-                if ( temp.ToShortDateString() != d.ToShortDateString())
+                if ( temp.ToShortDateString() == d.ToShortDateString())
                 {
-                    r.Delete();
-                    i--;
+                    ds.Tables[0].Rows.Add(r.ItemArray);
                 }
             }
-            ds.Tables[0].AcceptChanges();
             return ds;
         }
         public static DataSet GetDataByFilmName(string filmName)
         {
             filmName = filmName.ToLower();
-            DataSet ds = new DataSet();
-            ds.Merge(DataShowTime);
+            DataSet ds = DataShowTime.Clone();
             for (int i = 0; i < DataShowTime.Tables[0].Rows.Count; i++)
             {
-                DataRow r = ds.Tables[0].Rows[i];
+                DataRow r = DataShowTime.Tables[0].Rows[i];
                 string temp = r["TenPhim"].ToString();
                 temp = temp.ToLower();
-                if (!temp.Contains(filmName))
+                if (temp.Contains(filmName))
                 {
-                    r.Delete();
-                    i--;
+                    ds.Tables[0].Rows.Add(r.ItemArray);
                 }
             }
-            ds.Tables[0].AcceptChanges();
             return ds;
         }
 

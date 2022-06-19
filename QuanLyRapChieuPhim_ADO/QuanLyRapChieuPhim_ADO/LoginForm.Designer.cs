@@ -38,6 +38,7 @@
             this.settingDBBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -51,7 +52,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.passWordTxb);
             this.panel2.Controls.Add(this.userNameTxb);
-            this.panel2.Location = new System.Drawing.Point(591, 167);
+            this.panel2.Location = new System.Drawing.Point(591, 109);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(330, 233);
             this.panel2.TabIndex = 1;
@@ -148,9 +149,22 @@
             this.pictureBox2.Image = global::QuanLyRapChieuPhim_ADO.Properties.Resources.cinema_background;
             this.pictureBox2.Location = new System.Drawing.Point(12, 12);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(565, 544);
+            this.pictureBox2.Size = new System.Drawing.Size(555, 534);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 12;
             this.pictureBox2.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Fuchsia;
+            this.label4.Location = new System.Drawing.Point(591, 358);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(322, 96);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Created by Group 10:\r\n1. Nguyễn Minh Sơn - 20110713\r\n2. Nguyễn Đức Thành - 201103" +
+    "07\r\n3. Mai Bảo Huy - 20110649";
             // 
             // LoginForm
             // 
@@ -158,6 +172,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(933, 558);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.settingDBBtn);
             this.Controls.Add(this.label3);
@@ -192,6 +207,7 @@
         private System.Windows.Forms.Button settingDBBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label4;
     }
 }
 

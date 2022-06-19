@@ -95,6 +95,19 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
             }
             return success;
         }
+        public static int GetPoint(string customerID)
+        {
+            using (CinemaManagementModel ctx = new CinemaManagementModel())
+            {
+                int id = int.Parse(customerID);
+                KhachHang customer = ctx.KhachHangs.SingleOrDefault(c => c.MaKhachHang == id);
+                if (customer != null)
+                {
+                    return customer.DiemTichLuy;
+                }
+            }
+            return 0;
+        }
         public static bool UpdatePoint(string customerID, int cumulativePoint, ref string err)
         {
             bool success = true;
@@ -106,7 +119,7 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                     KhachHang customer = ctx.KhachHangs.SingleOrDefault(c => c.MaKhachHang == id);
                     if (customer != null)
                     {
-                        customer.DiemTichLuy = cumulativePoint;
+                        customer.DiemTichLuy = cumulativePoint + GetPoint(customerID);
                         ctx.SaveChanges();
                     }
                 }

@@ -37,9 +37,15 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
                 $"'{phoneNumber}', {cumulativePoint});";
             return DataProvider.ExecuteNonQuery(command, ref err);
         }
+        public static int GetPoint(string customerID)
+        {
+            string command = $"select DiemTichLuy from KhachHang where MaKhachHang = '{customerID}'; ";
+            string res = DataProvider.GetSingleStringValueFromQuery(command);
+            return int.Parse(res);
+        }
         public static bool UpdatePoint(string customerID, int cumulativePoint, ref string err)
         {
-            string command = $"update {tableName} set DiemTichLuy = {cumulativePoint} where MaKhachHang = '{customerID}'; ";
+            string command = $"update {tableName} set DiemTichLuy = {cumulativePoint + GetPoint(customerID)} where MaKhachHang = '{customerID}'; ";
             bool success = DataProvider.ExecuteNonQuery(command, ref err);
             return success;
         }
