@@ -14,6 +14,8 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
         public static DataSet GetRevenueData(DateTime start, DateTime end, string isASC = "")
         {
             DataSet revenueDS = new DataSet();
+            start = new DateTime(start.Year, start.Month, start.Day, 0,0,0);
+            end = new DateTime(end.Year, end.Month, end.Day, 23,59,59);
             using (CinemaManagementModel ctx = new CinemaManagementModel())
             {
                 var revenueData = (

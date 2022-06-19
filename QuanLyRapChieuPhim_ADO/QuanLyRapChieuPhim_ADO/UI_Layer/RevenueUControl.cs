@@ -16,8 +16,6 @@ namespace QuanLyRapChieuPhim_ADO.UI_Layer
     {
         Utilities utilities;
         List<Control> controls;
-        //RevenueDataSet.DoanhThuDataTable revenueDT;
-        //DoanhThuTableAdapter doanhThuTableAdapter;
         public RevenueUControl()
         {
             InitializeComponent();
@@ -28,8 +26,6 @@ namespace QuanLyRapChieuPhim_ADO.UI_Layer
             controls = new List<Control>() {filmIDTxb, filmNameTxb, startShowDTPicker, endShowDTPicker, totalTicketTxb, totalRevenueTxb };
             utilities = new Utilities(controls, revenueDataGridView);
             utilities.FormLoad(BLRevenue.GetRevenueData(startDTPicker.Value, endDTPicker.Value));
-            //revenueDT = new RevenueDataSet.DoanhThuDataTable();
-            //doanhThuTableAdapter = new DoanhThuTableAdapter();
         }
 
         private void revenueDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
