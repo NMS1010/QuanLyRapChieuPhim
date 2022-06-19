@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,11 +27,14 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
         public static bool Authentication(string username, string password, ref string error)
         {
             bool success = true;
-            using (CinemaManagementModel ctx = new CinemaManagementModel())
+            DBConnect.DBConnection.Connect();
+            using (CinemaManagementModel ctx = new CinemaManagementModel(DBConnect.DBConnection.ConnectionString))
             {
                 try
                 {
-                    TaiKhoan entity = ctx.TaiKhoans.SingleOrDefault(x => x.TenTaiKhoan == username && x.MatKhau == password);
+                    TaiKhoan entity = (from a in ctx.TaiKhoans
+                                       where a.TenTaiKhoan == username && a.MatKhau == password
+                                       select a).SingleOrDefault();
                     if (entity == null)
                     {
                         success = false;
@@ -45,6 +50,12 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                         AccountRole = ACCOUNT_ROLE.ADMIN;
                     }
                     UserName = entity.TenTaiKhoan.ToString();
+                }
+                catch (SqlException e)
+                {
+
+                    success = false;
+                    error = e.Message;
                 }
                 catch (Exception e)
                 {

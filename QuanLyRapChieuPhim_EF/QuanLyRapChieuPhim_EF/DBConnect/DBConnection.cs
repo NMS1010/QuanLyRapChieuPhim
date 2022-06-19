@@ -12,10 +12,10 @@ namespace QuanLyRapChieuPhim_EF.DBConnect
 {
     internal class DBConnection
     {
-        public static string ServerName = "MINHSON\\MINHSON";
+        public static string ServerName = @"MINHSON\MINHSON";
         public static string DatabaseName = "QuanLyRapChieuPhim";
         public static string ConnectionString;
-        private static void Connect()
+        public static void Connect()
         {
             ConnectionString = $"data source={ServerName};initial catalog={DatabaseName};integrated security=True;multipleactiveresultsets=True;application name=EntityFramework;Persist Security Info = True";
             var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);

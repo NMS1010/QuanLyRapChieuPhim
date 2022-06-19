@@ -35,6 +35,7 @@ namespace QuanLyRapChieuPhim_EF
         private void loginBtn_Click(object sender, EventArgs e)
         {
             string error = "";
+            
             bool success = BLLogin.Authentication(userNameTxb.Text, passWordTxb.Text, ref error);
             if (!success)
             {

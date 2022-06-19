@@ -11,7 +11,10 @@ namespace QuanLyRapChieuPhim_EF.DataObjects
             : base("name=CinemaManagementModel")
         {
         }
-
+        public CinemaManagementModel(string connectionStr)
+           : base(connectionStr)
+        {
+        }
         public virtual DbSet<BoPhim> BoPhims { get; set; }
         public virtual DbSet<DinhDangManHinh> DinhDangManHinhs { get; set; }
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
