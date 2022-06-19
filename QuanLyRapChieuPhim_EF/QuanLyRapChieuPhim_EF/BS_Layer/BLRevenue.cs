@@ -33,7 +33,7 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                         TongSoVe = revenue.Count(t => t.TrangThai == 1),
                         TongTien = (from a in ctx.SuatChieux
                                     where a.MaBoPhim == revenue.Key
-                                    select a.MaSuatChieu).Sum(t => ctx.Ves.Where(v => v.MaSuatChieu == t).Sum(x => x.TienVe))
+                                    select a.MaSuatChieu).Sum(t => ctx.Ves.Where(v => v.MaSuatChieu == t && v.NgayMua >= start && v.NgayMua <= end).Sum(x => x.TienVe))
                     }
                     );
                 if(isASC == "ASC")
