@@ -157,5 +157,10 @@ namespace QuanLyRapChieuPhim_EF.UI_Layer
 
             CheckChange();
         }
+
+        private void sexCbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CheckChange();
+        }
     }
 }

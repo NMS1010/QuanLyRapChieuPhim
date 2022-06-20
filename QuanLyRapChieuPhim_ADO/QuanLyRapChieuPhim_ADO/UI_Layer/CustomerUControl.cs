@@ -25,7 +25,8 @@ namespace QuanLyRapChieuPhim_ADO.UI_Layer
             if (customerIdTxb.Text == "")
                 customerIdTxb.Text = ".";
             if (utilities.IsNullTxb() || (!isEditData && !isAddData) ||
-                !double.TryParse(phoneTxb.Text, out double res1))
+                !int.TryParse(phoneTxb.Text, out int res1) ||
+                !int.TryParse(cumulativePointTxb.Text, out int res2))
             {
                 utilities.SetEnableButton(new List<Button>() { saveBtn }, false);
                 return;
@@ -160,6 +161,11 @@ namespace QuanLyRapChieuPhim_ADO.UI_Layer
         private void birthdayDTimePicker_ValueChanged(object sender, EventArgs e)
         {
 
+            CheckChange();
+        }
+
+        private void sexCbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
             CheckChange();
         }
     }

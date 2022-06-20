@@ -155,7 +155,11 @@ namespace QuanLyRapChieuPhim_ADO.UI_Layer
 
         private void birthdayDTimePicker_ValueChanged(object sender, EventArgs e)
         {
+            CheckChange();
+        }
 
+        private void sexCbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
             CheckChange();
         }
     }

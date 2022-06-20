@@ -365,6 +365,7 @@
             this.sexCbx.Name = "sexCbx";
             this.sexCbx.Size = new System.Drawing.Size(174, 24);
             this.sexCbx.TabIndex = 24;
+            this.sexCbx.SelectedIndexChanged += new System.EventHandler(this.sexCbx_SelectedIndexChanged);
             // 
             // label1
             // 
