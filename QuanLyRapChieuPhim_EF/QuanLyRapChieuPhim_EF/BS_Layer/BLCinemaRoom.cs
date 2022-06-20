@@ -130,7 +130,6 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                                 if (e != null)
                                 {
                                     e.TrangThai = cinemaRoomStatus;
-                                    ctx.SaveChanges();
                                 }
                             }
                             catch (Exception e)
@@ -141,6 +140,7 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                             if (!success)
                                 return success;
                         }
+                        ctx.SaveChanges();
                     }
                 }
                 catch (Exception e)

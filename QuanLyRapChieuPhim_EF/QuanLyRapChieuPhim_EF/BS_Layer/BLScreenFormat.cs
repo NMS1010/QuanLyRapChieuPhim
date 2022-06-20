@@ -136,7 +136,6 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                     foreach(PhongChieu room in cinemaRoom)
                     {
                         room.TinhTrang = 0; 
-                        ctx.SaveChanges();
                     }
                     DinhDangManHinh screenFormat = new DinhDangManHinh() { MaDinhDangMH = screenFormatID };
                     ctx.DinhDangManHinhs.Attach(screenFormat);

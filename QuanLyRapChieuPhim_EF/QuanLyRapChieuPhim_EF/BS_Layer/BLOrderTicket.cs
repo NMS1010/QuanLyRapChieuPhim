@@ -20,17 +20,18 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
         }
         public static void GetValidShowTime()
         {
-            DataShowTime = BLShowTime.GetData();
-            for(int i = 0; i < DataShowTime.Tables[0].Rows.Count; i++)
+            DataSet temp = BLShowTime.GetData();
+            DataShowTime = temp.Clone();
+            for(int i = 0; i < temp.Tables[0].Rows.Count; i++)
             {
-                DataRow r = DataShowTime.Tables[0].Rows[i];
+                DataRow r = temp.Tables[0].Rows[i];
                 string showTimeID = r["MaSuatChieu"].ToString();
                 using (CinemaManagementModel ctx = new CinemaManagementModel())
                 {
                     Ve e = ctx.Ves.FirstOrDefault(v => v.MaSuatChieu == showTimeID); 
-                    if (r["TrangThai"].ToString() == "0" || e == null)
+                    if (r["TrangThai"].ToString() != "0" && e != null)
                     {
-                        r.Delete();
+                        DataShowTime.Tables[0].Rows.Add(r.ItemArray); 
                     }
                 }
                 

@@ -133,7 +133,6 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                                 if (e != null)
                                 {
                                     e.TrangThai = movieStatus;
-                                    ctx.SaveChanges();
                                 }
                             }
                             catch (Exception e)
@@ -144,6 +143,7 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                             if (!success)
                                 return success;
                         }
+                        ctx.SaveChanges();
                     }
                 }
                 catch (Exception e)
@@ -194,15 +194,16 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                     {
                         ctx.BoPhims.Find(filmId).TheLoais.Remove(ctx.TheLoais.Find(genre.MaTheLoai));
                     }
+                    ctx.SaveChanges();
                     foreach (string genreName in genreNames)
                     {
                         List<string> genreIDs = BLGenre.GetGenreIDFromGenreName(genreName);
                         foreach (string genreID in genreIDs)
                         {
                             ctx.BoPhims.Find(filmId).TheLoais.Add(ctx.TheLoais.Find(genreID));
-                            ctx.SaveChanges();
                         }
                     }
+                    ctx.SaveChanges();
                 }
                 catch (Exception e)
                 {

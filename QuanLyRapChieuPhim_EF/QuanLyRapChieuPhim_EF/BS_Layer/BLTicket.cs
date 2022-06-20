@@ -67,15 +67,11 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
             DataSet ds = BLShowTime.GetData();
             ds.Tables[0].Columns.Remove("GiaVe");
             ds.Tables[0].Columns.Add(new DataColumn("TinhTrangVe", typeof(string)));
+            DataSet res = ds.Clone();
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 DataRow dr = ds.Tables[0].Rows[i];
-                if ((int)dr["TrangThai"] == 0)
-                {
-                    dr.Delete();
-                    i--;
-                }
-                else
+                if ((int)dr["TrangThai"] != 0)
                 {
                     if (!IsTicketsCreateByShowTime(dr["MaSuatChieu"].ToString()))
                     {
@@ -85,9 +81,10 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                     {
                         dr["TinhTrangVe"] = "Đã tạo vé";
                     }
+                    res.Tables[0].Rows.Add(dr.ItemArray);
                 }
             }
-            return ds;
+            return res;
         }
         public static bool Insert(int ticketStatus, string seatID, string customerID, string showTimeID, int ticketType, decimal ticketPrice, DateTime buyDate, ref string error)
         {
@@ -150,8 +147,8 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                     {
                         ctx.Ves.Attach(ticket);
                         ctx.Ves.Remove(ticket);
-                        ctx.SaveChanges();
                     }
+                    ctx.SaveChanges();
                 }
                 catch (Exception e)
                 {

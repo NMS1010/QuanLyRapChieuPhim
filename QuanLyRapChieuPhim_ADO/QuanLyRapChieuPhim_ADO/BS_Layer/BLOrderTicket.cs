@@ -20,15 +20,16 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
         }
         public static void GetValidShowTime()
         {
-            DataShowTime = BLShowTime.GetData();
-            for(int i = 0; i < DataShowTime.Tables[0].Rows.Count; i++)
+            DataSet temp = BLShowTime.GetData();
+            DataShowTime = temp.Clone();
+            for(int i = 0; i < temp.Tables[0].Rows.Count; i++)
             {
-                DataRow r = DataShowTime.Tables[0].Rows[i];
+                DataRow r = temp.Tables[0].Rows[i];
                 string command = $"select MaSuatChieu from Ve where MaSuatChieu = '{r["MaSuatChieu"]}'";
                 string res = DataProvider.GetSingleStringValueFromQuery(command);
-                if (r["TrangThai"].ToString() == "0" || res == "")
+                if (r["TrangThai"].ToString() != "0" && res != "")
                 {
-                    r.Delete();
+                    DataShowTime.Tables[0].Rows.Add(r.ItemArray);
                 }
             }
             DataShowTime.Tables[0].AcceptChanges();
