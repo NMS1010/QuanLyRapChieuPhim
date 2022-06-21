@@ -10,10 +10,22 @@ namespace QuanLyRapChieuPhim_EF.DataObjects
         public CinemaManagementModel()
             : base("name=CinemaManagementModel")
         {
+            Database.SetInitializer(new MyInitializer());
         }
         public CinemaManagementModel(string connectionStr)
            : base(connectionStr)
         {
+            Database.SetInitializer(new MyInitializer());
+        }
+        public class MyInitializer : CreateDatabaseIfNotExists<CinemaManagementModel>
+        {
+            protected override void Seed(CinemaManagementModel context)
+            {
+                context.TaiKhoans.Add(
+                    new TaiKhoan{ TenTaiKhoan = "admin", MatKhau = "admin", LoaiTaiKhoan = "1"}
+                );
+                context.SaveChanges();
+            }
         }
         public virtual DbSet<BoPhim> BoPhims { get; set; }
         public virtual DbSet<DinhDangManHinh> DinhDangManHinhs { get; set; }
