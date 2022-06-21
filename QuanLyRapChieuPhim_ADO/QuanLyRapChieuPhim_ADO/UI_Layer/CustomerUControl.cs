@@ -25,7 +25,7 @@ namespace QuanLyRapChieuPhim_ADO.UI_Layer
             if (customerIdTxb.Text == "")
                 customerIdTxb.Text = ".";
             if (utilities.IsNullTxb() || (!isEditData && !isAddData) ||
-                !int.TryParse(phoneTxb.Text, out int res1) ||
+                !long.TryParse(phoneTxb.Text, out long res1) ||
                 !int.TryParse(cumulativePointTxb.Text, out int res2))
             {
                 utilities.SetEnableButton(new List<Button>() { saveBtn }, false);

@@ -25,7 +25,7 @@ namespace QuanLyRapChieuPhim_ADO.UI_Layer
             if (employeeIdTxb.Text == "")
                 employeeIdTxb.Text = ".";
             if (utilities.IsNullTxb() || (!isEditData && !isAddData) ||
-                !double.TryParse(phoneTxb.Text, out double res1))
+                !long.TryParse(phoneTxb.Text, out long res1))
             {
                 utilities.SetEnableButton(new List<Button>() { saveBtn }, false);
                 return;
