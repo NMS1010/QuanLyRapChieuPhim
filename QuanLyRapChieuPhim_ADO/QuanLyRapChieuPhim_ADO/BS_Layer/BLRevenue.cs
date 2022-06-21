@@ -19,7 +19,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
                 "from BoPhim " +
                 "inner join SuatChieu on BoPhim.MaBoPhim = SuatChieu.MaBoPhim " +
                 "inner join Ve on SuatChieu.MaSuatChieu = Ve.MaSuatChieu " +
-                $"where Ve.TrangThai = 1 and NgayMua >= '{start}' and NgayMua <= '{end}'" +
+                $"where Ve.TrangThai = 1 and NgayMua >= '{start.ToString("yyyy-MM-dd")}' and NgayMua <= '{end.ToString("yyyy-MM-dd")}'" +
                 "group by BoPhim.MaBoPhim ";
             if(isASC != "")
             {

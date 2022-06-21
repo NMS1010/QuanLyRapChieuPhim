@@ -52,7 +52,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
             {
                 DataRow r = DataShowTime.Tables[0].Rows[i];
                 DateTime temp = (DateTime)r["NgayChieu"];
-                if (temp.ToShortDateString() == d.ToShortDateString())
+                if (temp.ToString("yyyy-MM-dd") == d.ToString("yyyy-MM-dd"))
                 {
                     ds.Tables[0].Rows.Add(r.ItemArray);
                 }

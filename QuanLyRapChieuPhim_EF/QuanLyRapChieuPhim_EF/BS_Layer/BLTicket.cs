@@ -43,7 +43,9 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                     dr["MaSuatChieu"] = ticket.MaSuatChieu.ToString();
                     dr["LoaiVe"] = ticket.LoaiVe;
                     dr["TienVe"] = ticket.TienVe;
-                    dr["NgayMua"] = ticket.NgayMua.ToString();
+                    dr["NgayMua"] = ticket.NgayMua;
+                    if (ticket.NgayMua.HasValue)
+                        dr["NgayMua"] = ticket.NgayMua.Value.ToString("dd/MM/yyyy");
                     dt.Rows.Add(dr);
                 }
                 ds.Tables.Add(dt);
