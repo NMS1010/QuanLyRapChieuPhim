@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +26,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
         public static bool Update(string customerID, string customerName, DateTime birthDate, string sex, string address, string phoneNumber,
             int cumulativePoint, ref string err)
         {
-            string command = $"update {tableName} set Hoten = N'{customerName}', NgaySinh = '{birthDate}', GioiTinh = N'{sex}', DiaChi = N'{address}', " +
+            string command = $"update {tableName} set Hoten = N'{customerName}', NgaySinh = '{birthDate.ToString("yyyy-MM-dd")}', GioiTinh = N'{sex}', DiaChi = N'{address}', " +
                 $"SoDienThoai = '{phoneNumber}', DiemTichLuy = {cumulativePoint} where MaKhachHang = '{customerID}'; ";
             bool success = DataProvider.ExecuteNonQuery(command, ref err);
             return success;
@@ -33,7 +34,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
         public static bool Insert(string customerName, DateTime birthDate, string sex, string address, string phoneNumber,
             int cumulativePoint, ref string err)
         {
-            string command = $"insert into {tableName} (Hoten, NgaySinh, GioiTinh, DiaChi, SoDienThoai, DiemTichLuy) values( N'{customerName}','{birthDate}', N'{sex}', N'{address}'," +
+            string command = $"insert into {tableName} (Hoten, NgaySinh, GioiTinh, DiaChi, SoDienThoai, DiemTichLuy) values( N'{customerName}','{birthDate.ToString("yyyy-MM-dd")}', N'{sex}', N'{address}'," +
                 $"'{phoneNumber}', {cumulativePoint});";
             return DataProvider.ExecuteNonQuery(command, ref err);
         }

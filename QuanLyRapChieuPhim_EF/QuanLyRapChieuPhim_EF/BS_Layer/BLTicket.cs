@@ -86,14 +86,14 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
             }
             return res;
         }
-        public static bool Insert(int ticketStatus, string seatID, string customerID, string showTimeID, int ticketType, decimal ticketPrice, DateTime buyDate, ref string error)
+        public static bool Insert(int ticketStatus, string seatID, string customerID, string showTimeID, int ticketType, decimal ticketPrice, ref string error)
         {
             bool success = true;
             using (CinemaManagementModel ctx = new CinemaManagementModel())
             {
                 try
                 {
-                    Ve ticket = new Ve(ticketStatus, seatID, customerID, showTimeID, ticketType, ticketPrice, buyDate);
+                    Ve ticket = new Ve(ticketStatus, seatID, customerID, showTimeID, ticketType, ticketPrice);
                     ctx.Ves.Add(ticket);
                     ctx.SaveChanges();
                 }
@@ -195,7 +195,7 @@ namespace QuanLyRapChieuPhim_EF.BS_Layer
                 {
                     for (int j = 0; j < numberChairPerRow; j++)
                     {
-                        success = Insert(0, strSequence[i] + j.ToString(), String.Empty, showTimeID, 0, (decimal)0, DateTime.Now, ref error);
+                        success = Insert(0, strSequence[i] + j.ToString(), String.Empty, showTimeID, 0, (decimal)0, ref error);
                         if (!success)
                             return success;
                     }

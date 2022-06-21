@@ -45,8 +45,8 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
                 return false;
             }
             string command = $"update {tableName} set TenPhim = N'{filmName}'," +
-                $" MoTa = N'{filmDes}', ThoiLuong = {totalFilmTime}, NgayKhoiChieu = '{startShow}'," +
-                $"NgayKetThuc = '{endShow}', NamSX = {year}, DaoDien = N'{director}', TenHangPhim = N'{studioFilm}', TrangThai = {movieStatus} where MaBoPhim = '{filmId}'; ";
+                $" MoTa = N'{filmDes}', ThoiLuong = {totalFilmTime}, NgayKhoiChieu = '{startShow.ToString("yyyy-MM-dd")}'," +
+                $"NgayKetThuc = '{endShow.ToString("yyyy-MM-dd")}', NamSX = {year}, DaoDien = N'{director}', TenHangPhim = N'{studioFilm}', TrangThai = {movieStatus} where MaBoPhim = '{filmId}'; ";
             bool success = DataProvider.ExecuteNonQuery(command, ref err);
             List<string> showTimeIDs = DataProvider.GetStringValuesFromSpecificColumnWithCondition("SuatChieu", "MaSuatChieu", $"MaBoPhim = '{filmId}'");
             foreach(string showTimeID in showTimeIDs)
@@ -69,7 +69,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
                 err = "Ngày khởi chiếu phải nhỏ hơn Ngày kết thúc";
                 return false;
             }
-            string command = $@"insert into {tableName} values('{filmId}',N'{filmName}',N'{filmDes}','{totalFilmTime}','{startShow}','{endShow}','{year}',N'{director}',N'{studioFilm}', {movieStatus});";
+            string command = $@"insert into {tableName} values('{filmId}',N'{filmName}',N'{filmDes}','{totalFilmTime}','{startShow.ToString("yyyy-MM-dd")}','{endShow.ToString("yyyy-MM-dd")}','{year}',N'{director}',N'{studioFilm}', {movieStatus});";
             bool success = DataProvider.ExecuteNonQuery(command, ref err);
             return success;
         }

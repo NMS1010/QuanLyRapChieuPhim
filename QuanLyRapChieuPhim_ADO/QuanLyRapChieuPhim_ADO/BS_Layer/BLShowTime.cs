@@ -139,7 +139,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
         {
             if (!CheckShowTime(showTimeID,startShowTime, filmID, cinemaRoomID, ref err))
                 return false;
-            string command = $"update {tableName} set ThoiGian = '{startShowTime}'," +
+            string command = $"update {tableName} set ThoiGian = '{startShowTime.ToString("yyyy-MM-dd HH:mm:ss")}'," +
                 $" TrangThai = {statusShowTime}, MaBoPhim = '{filmID}', MaPhongChieu = '{cinemaRoomID}' where MaSuatChieu = '{showTimeID}'; ";
             bool success = DataProvider.ExecuteNonQuery(command, ref err);
             return success;
@@ -149,7 +149,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
         {
             if (!CheckShowTime(showTimeID,startShowTime, filmID, cinemaRoomID, ref err))
                 return false;
-            string command = $"insert into {tableName} values('{showTimeID}','{startShowTime}', {int.Parse(statusShowTime)},'{filmID}','{cinemaRoomID}');";
+            string command = $"insert into {tableName} values('{showTimeID}','{startShowTime.ToString("yyyy-MM-dd HH:mm:ss")}', {int.Parse(statusShowTime)},'{filmID}','{cinemaRoomID}');";
             bool success = DataProvider.ExecuteNonQuery(command, ref err);
             return success;
         }

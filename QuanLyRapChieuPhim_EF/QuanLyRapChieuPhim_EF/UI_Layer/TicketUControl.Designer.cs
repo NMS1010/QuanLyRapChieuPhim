@@ -28,18 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ticketGenDataGridView = new System.Windows.Forms.DataGridView();
-            this.MaVe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TInhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaLichChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LoaiVe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TienVe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayMua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ticketGenBtn = new System.Windows.Forms.Button();
             this.showTimeDataGridView = new System.Windows.Forms.DataGridView();
             this.MaSuatChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +44,14 @@
             this.GioChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.removeTicketBtn = new System.Windows.Forms.Button();
+            this.MaVe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TInhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaLichChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LoaiVe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TienVe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayMua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ticketGenDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.showTimeDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -75,70 +75,6 @@
             this.ticketGenDataGridView.ReadOnly = true;
             this.ticketGenDataGridView.Size = new System.Drawing.Size(908, 376);
             this.ticketGenDataGridView.TabIndex = 0;
-            // 
-            // MaVe
-            // 
-            this.MaVe.DataPropertyName = "MaVe";
-            this.MaVe.HeaderText = "Mã vé";
-            this.MaVe.Name = "MaVe";
-            this.MaVe.ReadOnly = true;
-            this.MaVe.Width = 120;
-            // 
-            // TInhTrang
-            // 
-            this.TInhTrang.DataPropertyName = "TrangThai";
-            this.TInhTrang.HeaderText = "Trạng thái";
-            this.TInhTrang.Name = "TInhTrang";
-            this.TInhTrang.ReadOnly = true;
-            // 
-            // MaGhe
-            // 
-            this.MaGhe.DataPropertyName = "MaGhe";
-            this.MaGhe.HeaderText = "Mã ghế";
-            this.MaGhe.Name = "MaGhe";
-            this.MaGhe.ReadOnly = true;
-            // 
-            // MaKhachHang
-            // 
-            this.MaKhachHang.DataPropertyName = "MaKhachHang";
-            this.MaKhachHang.HeaderText = "Mã khách hàng";
-            this.MaKhachHang.Name = "MaKhachHang";
-            this.MaKhachHang.ReadOnly = true;
-            this.MaKhachHang.Width = 140;
-            // 
-            // MaLichChieu
-            // 
-            this.MaLichChieu.DataPropertyName = "MaSuatChieu";
-            this.MaLichChieu.HeaderText = "Mã suất chiếu";
-            this.MaLichChieu.Name = "MaLichChieu";
-            this.MaLichChieu.ReadOnly = true;
-            this.MaLichChieu.Width = 140;
-            // 
-            // LoaiVe
-            // 
-            this.LoaiVe.DataPropertyName = "LoaiVe";
-            this.LoaiVe.HeaderText = "Loại vé";
-            this.LoaiVe.Name = "LoaiVe";
-            this.LoaiVe.ReadOnly = true;
-            this.LoaiVe.Width = 140;
-            // 
-            // TienVe
-            // 
-            this.TienVe.DataPropertyName = "TienVe";
-            this.TienVe.HeaderText = "Tiền vé";
-            this.TienVe.Name = "TienVe";
-            this.TienVe.ReadOnly = true;
-            this.TienVe.Width = 120;
-            // 
-            // NgayMua
-            // 
-            this.NgayMua.DataPropertyName = "NgayMua";
-            dataGridViewCellStyle4.Format = "d";
-            dataGridViewCellStyle4.NullValue = null;
-            this.NgayMua.DefaultCellStyle = dataGridViewCellStyle4;
-            this.NgayMua.HeaderText = "Ngày mua";
-            this.NgayMua.Name = "NgayMua";
-            this.NgayMua.ReadOnly = true;
             // 
             // ticketGenBtn
             // 
@@ -219,9 +155,9 @@
             // NgayChieu
             // 
             this.NgayChieu.DataPropertyName = "NgayChieu";
-            dataGridViewCellStyle5.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle5.NullValue = null;
-            this.NgayChieu.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle2.NullValue = null;
+            this.NgayChieu.DefaultCellStyle = dataGridViewCellStyle2;
             this.NgayChieu.HeaderText = "Ngày chiếu";
             this.NgayChieu.Name = "NgayChieu";
             this.NgayChieu.ReadOnly = true;
@@ -229,9 +165,9 @@
             // GioChieu
             // 
             this.GioChieu.DataPropertyName = "GioChieu";
-            dataGridViewCellStyle6.Format = "t";
-            dataGridViewCellStyle6.NullValue = null;
-            this.GioChieu.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Format = "t";
+            dataGridViewCellStyle3.NullValue = null;
+            this.GioChieu.DefaultCellStyle = dataGridViewCellStyle3;
             this.GioChieu.HeaderText = "Giờ Chiếu";
             this.GioChieu.Name = "GioChieu";
             this.GioChieu.ReadOnly = true;
@@ -259,6 +195,70 @@
             this.removeTicketBtn.UseVisualStyleBackColor = true;
             this.removeTicketBtn.Click += new System.EventHandler(this.removeTicketBtn_Click);
             // 
+            // MaVe
+            // 
+            this.MaVe.DataPropertyName = "MaVe";
+            this.MaVe.HeaderText = "Mã vé";
+            this.MaVe.Name = "MaVe";
+            this.MaVe.ReadOnly = true;
+            this.MaVe.Width = 120;
+            // 
+            // TInhTrang
+            // 
+            this.TInhTrang.DataPropertyName = "TrangThai";
+            this.TInhTrang.HeaderText = "Trạng thái";
+            this.TInhTrang.Name = "TInhTrang";
+            this.TInhTrang.ReadOnly = true;
+            // 
+            // MaGhe
+            // 
+            this.MaGhe.DataPropertyName = "MaGhe";
+            this.MaGhe.HeaderText = "Mã ghế";
+            this.MaGhe.Name = "MaGhe";
+            this.MaGhe.ReadOnly = true;
+            // 
+            // MaKhachHang
+            // 
+            this.MaKhachHang.DataPropertyName = "MaKhachHang";
+            this.MaKhachHang.HeaderText = "Mã khách hàng";
+            this.MaKhachHang.Name = "MaKhachHang";
+            this.MaKhachHang.ReadOnly = true;
+            this.MaKhachHang.Width = 140;
+            // 
+            // MaLichChieu
+            // 
+            this.MaLichChieu.DataPropertyName = "MaSuatChieu";
+            this.MaLichChieu.HeaderText = "Mã suất chiếu";
+            this.MaLichChieu.Name = "MaLichChieu";
+            this.MaLichChieu.ReadOnly = true;
+            this.MaLichChieu.Width = 140;
+            // 
+            // LoaiVe
+            // 
+            this.LoaiVe.DataPropertyName = "LoaiVe";
+            this.LoaiVe.HeaderText = "Loại vé";
+            this.LoaiVe.Name = "LoaiVe";
+            this.LoaiVe.ReadOnly = true;
+            this.LoaiVe.Width = 140;
+            // 
+            // TienVe
+            // 
+            this.TienVe.DataPropertyName = "TienVe";
+            this.TienVe.HeaderText = "Tiền vé";
+            this.TienVe.Name = "TienVe";
+            this.TienVe.ReadOnly = true;
+            this.TienVe.Width = 120;
+            // 
+            // NgayMua
+            // 
+            this.NgayMua.DataPropertyName = "NgayMua";
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle1.NullValue = null;
+            this.NgayMua.DefaultCellStyle = dataGridViewCellStyle1;
+            this.NgayMua.HeaderText = "Ngày mua";
+            this.NgayMua.Name = "NgayMua";
+            this.NgayMua.ReadOnly = true;
+            // 
             // TicketUControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -285,14 +285,6 @@
         private System.Windows.Forms.Button removeTicketBtn;
         public System.Windows.Forms.DataGridView ticketGenDataGridView;
         public System.Windows.Forms.DataGridView showTimeDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaVe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TInhTrang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaGhe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaKhachHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaLichChieu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiVe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TienVe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayMua;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSuatChieu;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenPhim;
@@ -301,5 +293,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrangVe;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayChieu;
         private System.Windows.Forms.DataGridViewTextBoxColumn GioChieu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaVe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TInhTrang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaGhe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaKhachHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaLichChieu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiVe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TienVe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayMua;
     }
 }

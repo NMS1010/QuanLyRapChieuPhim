@@ -30,7 +30,7 @@ namespace QuanLyRapChieuPhim_EF.DataObjects
 
         [Column(TypeName = "date")]
         public DateTime? NgayMua { get; set; }
-        public Ve(int ticketStatus, string seatID, string customerID, string showTimeID, int ticketType, decimal ticketPrice, DateTime buyDate)
+        public Ve(int ticketStatus, string seatID, string customerID, string showTimeID, int ticketType, decimal ticketPrice)
         {
             TrangThai = ticketStatus;
             MaGhe = seatID;
@@ -39,7 +39,6 @@ namespace QuanLyRapChieuPhim_EF.DataObjects
             MaSuatChieu = showTimeID;
             LoaiVe = ticketType;
             TienVe = ticketPrice;
-            NgayMua = buyDate;
         }
         public Ve()
         {

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.editBtn = new System.Windows.Forms.Button();
             this.birthdayDTimePicker = new System.Windows.Forms.DateTimePicker();
             this.addressRtxb = new System.Windows.Forms.RichTextBox();
@@ -256,9 +256,9 @@
             // NgaySinh
             // 
             this.NgaySinh.DataPropertyName = "NgaySinh";
-            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle1.NullValue = null;
-            this.NgaySinh.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle2.NullValue = null;
+            this.NgaySinh.DefaultCellStyle = dataGridViewCellStyle2;
             this.NgaySinh.HeaderText = "Ngày sinh";
             this.NgaySinh.Name = "NgaySinh";
             this.NgaySinh.ReadOnly = true;

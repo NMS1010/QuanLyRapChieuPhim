@@ -54,10 +54,10 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
             }
             return res;
         }
-        public static bool Insert(int ticketStatus, string seatID, string customerID, string showTimeID, int ticketType, decimal ticketPrice, DateTime buyDate, ref string error)
+        public static bool Insert(int ticketStatus, string seatID, string customerID, string showTimeID, int ticketType, decimal ticketPrice, ref string error)
         {
             string id = customerID != "" ? $"'{customerID}'" : "NULL";
-            string command = $"insert into {tableName} values({ticketStatus}, '{seatID}', {id},'{showTimeID}', {ticketType}, {ticketPrice}, '{buyDate}')"; ;
+            string command = $"insert into {tableName} values({ticketStatus}, '{seatID}', {id},'{showTimeID}', {ticketType}, {ticketPrice}, NULL)"; ;
             
             return DataProvider.ExecuteNonQuery(command, ref error);
         }
@@ -65,7 +65,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
         public static bool UpdateOrderedTicket(string customerID, double ticketPrice, string seatID, int ticketType, int ticketStatus, string showID, DateTime buyDate, ref string error)
         {
             string id = customerID != "" ? $"'{customerID}'" : "NULL";
-            string command = $"update {tableName} set MaKhachHang = {id}, TrangThai = {ticketStatus}, LoaiVe = {ticketType}, TienVe = {ticketPrice}, NgayMua = '{buyDate}' where MaGhe = '{seatID}' and MaSuatChieu = '{showID}'";
+            string command = $"update {tableName} set MaKhachHang = {id}, TrangThai = {ticketStatus}, LoaiVe = {ticketType}, TienVe = {ticketPrice}, NgayMua = '{buyDate.ToString("yyyy-MM-dd")}' where MaGhe = '{seatID}' and MaSuatChieu = '{showID}'";
             return DataProvider.ExecuteNonQuery(command, ref error);
         }
         public static bool RemoveAllTicketByShowTime(string showTimeID, ref string error)
@@ -108,7 +108,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
             {
                 for(int j = 0; j < numberChairPerRow; j++)
                 {
-                    success = Insert(0, strSequence[i] + j.ToString(), String.Empty, showTimeID, 0, (decimal)0, DateTime.Now, ref error);
+                    success = Insert(0, strSequence[i] + j.ToString(), String.Empty, showTimeID, 0, (decimal)0, ref error);
                     if (!success)
                         return success;
                 }

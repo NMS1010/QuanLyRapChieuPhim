@@ -26,7 +26,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
         public static bool Update(string employeeID, string employeeName, DateTime birthDate, string sex, string address, string phoneNumber,
             ref string err)
         {
-            string command = $"update {tableName} set Hoten = N'{employeeName}', NgaySinh = '{birthDate}', GioiTinh = N'{sex}', DiaChi = N'{address}', " +
+            string command = $"update {tableName} set Hoten = N'{employeeName}', NgaySinh = '{birthDate.ToString("yyyy-MM-dd")}', GioiTinh = N'{sex}', DiaChi = N'{address}', " +
                 $"SoDienThoai = '{phoneNumber}' where MaNhanVien = '{employeeID}'; ";
             bool success = DataProvider.ExecuteNonQuery(command, ref err);
             return success;
@@ -34,7 +34,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
         public static bool Insert(string employeeName, DateTime birthDate, string sex, string address, string phoneNumber,
             ref string err)
         {
-            string command = $"insert into {tableName} (Hoten, NgaySinh, GioiTinh, DiaChi, SoDienThoai) values( N'{employeeName}','{birthDate}', N'{sex}', N'{address}'," +
+            string command = $"insert into {tableName} (Hoten, NgaySinh, GioiTinh, DiaChi, SoDienThoai) values( N'{employeeName}','{birthDate.ToString("yyyy-MM-dd")}', N'{sex}', N'{address}'," +
                 $"'{phoneNumber}');";
             return DataProvider.ExecuteNonQuery(command, ref err);
         }
