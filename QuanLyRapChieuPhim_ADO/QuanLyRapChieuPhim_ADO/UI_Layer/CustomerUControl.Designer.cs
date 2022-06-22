@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.editBtn = new System.Windows.Forms.Button();
             this.birthdayDTimePicker = new System.Windows.Forms.DateTimePicker();
             this.addressRtxb = new System.Windows.Forms.RichTextBox();
@@ -59,10 +59,16 @@
             this.sexCbx = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.customerIdTxb = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.searchBtn = new System.Windows.Forms.Button();
+            this.searchTxb = new System.Windows.Forms.TextBox();
+            this.propertySearchCbx = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGridView)).BeginInit();
             this.functionButtonPnl.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // editBtn
@@ -90,9 +96,9 @@
             // addressRtxb
             // 
             this.addressRtxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressRtxb.Location = new System.Drawing.Point(703, 71);
+            this.addressRtxb.Location = new System.Drawing.Point(470, 122);
             this.addressRtxb.Name = "addressRtxb";
-            this.addressRtxb.Size = new System.Drawing.Size(226, 73);
+            this.addressRtxb.Size = new System.Drawing.Size(173, 34);
             this.addressRtxb.TabIndex = 19;
             this.addressRtxb.Text = "";
             this.addressRtxb.TextChanged += new System.EventHandler(this.OnTextChange);
@@ -119,7 +125,7 @@
             // phoneTxb
             // 
             this.phoneTxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneTxb.Location = new System.Drawing.Point(470, 42);
+            this.phoneTxb.Location = new System.Drawing.Point(470, 38);
             this.phoneTxb.Name = "phoneTxb";
             this.phoneTxb.Size = new System.Drawing.Size(173, 22);
             this.phoneTxb.TabIndex = 14;
@@ -148,7 +154,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(326, 44);
+            this.label5.Location = new System.Drawing.Point(326, 38);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(138, 25);
             this.label5.TabIndex = 4;
@@ -158,7 +164,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(698, 42);
+            this.label3.Location = new System.Drawing.Point(329, 131);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 25);
             this.label3.TabIndex = 2;
@@ -256,9 +262,9 @@
             // NgaySinh
             // 
             this.NgaySinh.DataPropertyName = "NgaySinh";
-            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle2.NullValue = null;
-            this.NgaySinh.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle3.NullValue = null;
+            this.NgaySinh.DefaultCellStyle = dataGridViewCellStyle3;
             this.NgaySinh.HeaderText = "Ngày sinh";
             this.NgaySinh.Name = "NgaySinh";
             this.NgaySinh.ReadOnly = true;
@@ -324,6 +330,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.customerIdTxb);
             this.panel1.Location = new System.Drawing.Point(3, 3);
@@ -348,7 +355,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(24, 18);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(951, 177);
+            this.groupBox1.Size = new System.Drawing.Size(695, 177);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin khách hàng";
@@ -386,6 +393,58 @@
             this.customerIdTxb.Visible = false;
             this.customerIdTxb.TextChanged += new System.EventHandler(this.OnTextChange);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.searchBtn);
+            this.groupBox2.Controls.Add(this.searchTxb);
+            this.groupBox2.Controls.Add(this.propertySearchCbx);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(755, 38);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(265, 147);
+            this.groupBox2.TabIndex = 26;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Tìm kiếm";
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchBtn.Location = new System.Drawing.Point(43, 103);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(185, 29);
+            this.searchBtn.TabIndex = 3;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseVisualStyleBackColor = false;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
+            // searchTxb
+            // 
+            this.searchTxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTxb.Location = new System.Drawing.Point(43, 68);
+            this.searchTxb.Name = "searchTxb";
+            this.searchTxb.Size = new System.Drawing.Size(185, 29);
+            this.searchTxb.TabIndex = 2;
+            // 
+            // propertySearchCbx
+            // 
+            this.propertySearchCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.propertySearchCbx.FormattingEnabled = true;
+            this.propertySearchCbx.Location = new System.Drawing.Point(111, 28);
+            this.propertySearchCbx.Name = "propertySearchCbx";
+            this.propertySearchCbx.Size = new System.Drawing.Size(148, 26);
+            this.propertySearchCbx.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 18);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Thuộc tính";
+            // 
             // CustomerUControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -405,6 +464,8 @@
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -441,5 +502,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SoDienThoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemTichLuy;
         private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button searchBtn;
+        private System.Windows.Forms.TextBox searchTxb;
+        private System.Windows.Forms.ComboBox propertySearchCbx;
+        private System.Windows.Forms.Label label4;
     }
 }

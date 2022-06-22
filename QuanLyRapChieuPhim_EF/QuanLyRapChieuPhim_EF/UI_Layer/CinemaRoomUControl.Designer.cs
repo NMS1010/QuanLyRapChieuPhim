@@ -59,10 +59,16 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cinemaRoomStatusCbx = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.searchBtn = new System.Windows.Forms.Button();
+            this.searchTxb = new System.Windows.Forms.TextBox();
+            this.propertySearchCbx = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.functionButtonPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cinemaRoomDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // reloadBtn
@@ -150,7 +156,7 @@
             this.screenNameCinemaRoomCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.screenNameCinemaRoomCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.screenNameCinemaRoomCbx.FormattingEnabled = true;
-            this.screenNameCinemaRoomCbx.Location = new System.Drawing.Point(182, 110);
+            this.screenNameCinemaRoomCbx.Location = new System.Drawing.Point(161, 110);
             this.screenNameCinemaRoomCbx.Name = "screenNameCinemaRoomCbx";
             this.screenNameCinemaRoomCbx.Size = new System.Drawing.Size(160, 24);
             this.screenNameCinemaRoomCbx.TabIndex = 13;
@@ -160,9 +166,9 @@
             // totalChairPerRowTxb
             // 
             this.totalChairPerRowTxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalChairPerRowTxb.Location = new System.Drawing.Point(558, 115);
+            this.totalChairPerRowTxb.Location = new System.Drawing.Point(504, 115);
             this.totalChairPerRowTxb.Name = "totalChairPerRowTxb";
-            this.totalChairPerRowTxb.Size = new System.Drawing.Size(129, 22);
+            this.totalChairPerRowTxb.Size = new System.Drawing.Size(76, 22);
             this.totalChairPerRowTxb.TabIndex = 11;
             this.totalChairPerRowTxb.TextChanged += new System.EventHandler(this.OnTextChange);
             // 
@@ -170,25 +176,25 @@
             // 
             this.totalSeatTxb.Enabled = false;
             this.totalSeatTxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalSeatTxb.Location = new System.Drawing.Point(558, 39);
+            this.totalSeatTxb.Location = new System.Drawing.Point(504, 39);
             this.totalSeatTxb.Name = "totalSeatTxb";
-            this.totalSeatTxb.Size = new System.Drawing.Size(129, 22);
+            this.totalSeatTxb.Size = new System.Drawing.Size(76, 22);
             this.totalSeatTxb.TabIndex = 10;
             this.totalSeatTxb.TextChanged += new System.EventHandler(this.OnTextChange);
             // 
             // totalNumberRowChairTxb
             // 
             this.totalNumberRowChairTxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalNumberRowChairTxb.Location = new System.Drawing.Point(558, 77);
+            this.totalNumberRowChairTxb.Location = new System.Drawing.Point(504, 77);
             this.totalNumberRowChairTxb.Name = "totalNumberRowChairTxb";
-            this.totalNumberRowChairTxb.Size = new System.Drawing.Size(129, 22);
+            this.totalNumberRowChairTxb.Size = new System.Drawing.Size(76, 22);
             this.totalNumberRowChairTxb.TabIndex = 10;
             this.totalNumberRowChairTxb.TextChanged += new System.EventHandler(this.OnTextChange);
             // 
             // cinemaRoomNameTxb
             // 
             this.cinemaRoomNameTxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cinemaRoomNameTxb.Location = new System.Drawing.Point(182, 76);
+            this.cinemaRoomNameTxb.Location = new System.Drawing.Point(161, 76);
             this.cinemaRoomNameTxb.Name = "cinemaRoomNameTxb";
             this.cinemaRoomNameTxb.Size = new System.Drawing.Size(161, 22);
             this.cinemaRoomNameTxb.TabIndex = 8;
@@ -271,7 +277,7 @@
             // cinemaRoomIdTxb
             // 
             this.cinemaRoomIdTxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cinemaRoomIdTxb.Location = new System.Drawing.Point(182, 39);
+            this.cinemaRoomIdTxb.Location = new System.Drawing.Point(161, 39);
             this.cinemaRoomIdTxb.Name = "cinemaRoomIdTxb";
             this.cinemaRoomIdTxb.Size = new System.Drawing.Size(161, 22);
             this.cinemaRoomIdTxb.TabIndex = 7;
@@ -281,7 +287,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(382, 110);
+            this.label7.Location = new System.Drawing.Point(328, 110);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(155, 24);
             this.label7.TabIndex = 6;
@@ -291,7 +297,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(381, 72);
+            this.label6.Location = new System.Drawing.Point(327, 72);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(119, 24);
             this.label6.TabIndex = 5;
@@ -301,7 +307,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(736, 38);
+            this.label5.Location = new System.Drawing.Point(608, 39);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 24);
             this.label5.TabIndex = 4;
@@ -311,7 +317,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(382, 39);
+            this.label4.Location = new System.Drawing.Point(328, 39);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(118, 24);
             this.label4.TabIndex = 3;
@@ -350,6 +356,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
@@ -375,7 +382,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(15, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(912, 158);
+            this.groupBox2.Size = new System.Drawing.Size(726, 158);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin phòng chiếu";
@@ -388,11 +395,63 @@
             this.cinemaRoomStatusCbx.Items.AddRange(new object[] {
             "1",
             "0"});
-            this.cinemaRoomStatusCbx.Location = new System.Drawing.Point(740, 73);
+            this.cinemaRoomStatusCbx.Location = new System.Drawing.Point(612, 74);
             this.cinemaRoomStatusCbx.Name = "cinemaRoomStatusCbx";
-            this.cinemaRoomStatusCbx.Size = new System.Drawing.Size(161, 24);
+            this.cinemaRoomStatusCbx.Size = new System.Drawing.Size(83, 24);
             this.cinemaRoomStatusCbx.TabIndex = 15;
             this.cinemaRoomStatusCbx.SelectedValueChanged += new System.EventHandler(this.cinemaRoomStatusCbx_SelectedValueChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.searchBtn);
+            this.groupBox1.Controls.Add(this.searchTxb);
+            this.groupBox1.Controls.Add(this.propertySearchCbx);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(748, 14);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(265, 147);
+            this.groupBox1.TabIndex = 27;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tìm kiếm";
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchBtn.Location = new System.Drawing.Point(43, 103);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(185, 29);
+            this.searchBtn.TabIndex = 3;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseVisualStyleBackColor = false;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
+            // searchTxb
+            // 
+            this.searchTxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTxb.Location = new System.Drawing.Point(43, 68);
+            this.searchTxb.Name = "searchTxb";
+            this.searchTxb.Size = new System.Drawing.Size(185, 29);
+            this.searchTxb.TabIndex = 2;
+            // 
+            // propertySearchCbx
+            // 
+            this.propertySearchCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.propertySearchCbx.FormattingEnabled = true;
+            this.propertySearchCbx.Location = new System.Drawing.Point(111, 28);
+            this.propertySearchCbx.Name = "propertySearchCbx";
+            this.propertySearchCbx.Size = new System.Drawing.Size(148, 26);
+            this.propertySearchCbx.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(16, 31);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(87, 18);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Thuộc tính";
             // 
             // CinemaRoomUControl
             // 
@@ -412,6 +471,8 @@
             this.panel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -449,5 +510,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SoHangGhe;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoGheMoiHang;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button searchBtn;
+        private System.Windows.Forms.TextBox searchTxb;
+        private System.Windows.Forms.ComboBox propertySearchCbx;
+        private System.Windows.Forms.Label label8;
     }
 }

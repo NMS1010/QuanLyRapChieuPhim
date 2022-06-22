@@ -31,6 +31,11 @@ namespace QuanLyRapChieuPhim_ADO.UI_Layer
             {
                 utilities.SetEnableButton(new List<Button>() { editBtn, removeBtn }, false);
             }
+            foreach (DataGridViewColumn dataCol in screenDataGridView.Columns)
+            {
+                propertySearchCbx.Items.Add(dataCol.Name);
+            }
+            propertySearchCbx.SelectedIndex = 0;
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
@@ -138,6 +143,11 @@ namespace QuanLyRapChieuPhim_ADO.UI_Layer
         private void screenDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             utilities.CellClick(cancelBtn, removeBtn, editBtn, saveBtn);
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            screenDataGridView.DataSource = BLCommon.Search(BLScreenFormat.GetData(), propertySearchCbx.SelectedIndex, searchTxb.Text);
         }
     }
 }

@@ -37,6 +37,11 @@ namespace QuanLyRapChieuPhim_ADO.UI_Layer
             {
                 utilities.SetEnableButton(new List<Button>() { editBtn, removeBtn }, false);
             }
+            foreach (DataGridViewColumn dataCol in movieDataGridView.Columns)
+            {
+                propertySearchCbx.Items.Add(dataCol.Name);
+            }
+            propertySearchCbx.SelectedIndex = 0;
         }
         private void CheckChange()
         {
@@ -189,5 +194,9 @@ namespace QuanLyRapChieuPhim_ADO.UI_Layer
             CheckChange();
         }
 
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            movieDataGridView.DataSource = BLCommon.Search(BLMovie.GetData(), propertySearchCbx.SelectedIndex, searchTxb.Text);
+        }
     }
 }

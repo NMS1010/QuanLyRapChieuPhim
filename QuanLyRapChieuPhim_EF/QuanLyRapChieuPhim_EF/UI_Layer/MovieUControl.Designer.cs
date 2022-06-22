@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.movieDataGridView = new System.Windows.Forms.DataGridView();
             this.MaBoPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,10 +74,16 @@
             this.editBtn = new System.Windows.Forms.Button();
             this.addBtn = new System.Windows.Forms.Button();
             this.functionButtonPnl = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.searchBtn = new System.Windows.Forms.Button();
+            this.searchTxb = new System.Windows.Forms.TextBox();
+            this.propertySearchCbx = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.movieDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.functionButtonPnl.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // movieDataGridView
@@ -142,8 +148,8 @@
             // NgayKhoiChieu
             // 
             this.NgayKhoiChieu.DataPropertyName = "NgayKhoiChieu";
-            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
-            this.NgayKhoiChieu.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Format = "dd/MM/yyyy";
+            this.NgayKhoiChieu.DefaultCellStyle = dataGridViewCellStyle5;
             this.NgayKhoiChieu.HeaderText = "Ngày khởi chiếu";
             this.NgayKhoiChieu.Name = "NgayKhoiChieu";
             this.NgayKhoiChieu.ReadOnly = true;
@@ -151,8 +157,8 @@
             // NgayKetThuc
             // 
             this.NgayKetThuc.DataPropertyName = "NgayKetThuc";
-            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
-            this.NgayKetThuc.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Format = "dd/MM/yyyy";
+            this.NgayKetThuc.DefaultCellStyle = dataGridViewCellStyle6;
             this.NgayKetThuc.HeaderText = "Ngày kết thúc";
             this.NgayKetThuc.Name = "NgayKetThuc";
             this.NgayKetThuc.ReadOnly = true;
@@ -188,6 +194,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
@@ -223,7 +230,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1010, 218);
+            this.groupBox1.Size = new System.Drawing.Size(790, 218);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin phim";
@@ -232,7 +239,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(568, 27);
+            this.label11.Location = new System.Drawing.Point(483, 30);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(28, 15);
             this.label11.TabIndex = 29;
@@ -258,7 +265,7 @@
             "0"});
             this.movieStatusCbx.Location = new System.Drawing.Point(121, 176);
             this.movieStatusCbx.Name = "movieStatusCbx";
-            this.movieStatusCbx.Size = new System.Drawing.Size(161, 24);
+            this.movieStatusCbx.Size = new System.Drawing.Size(83, 24);
             this.movieStatusCbx.TabIndex = 28;
             this.movieStatusCbx.SelectedIndexChanged += new System.EventHandler(this.movieStatusCbx_SelectedIndexChanged);
             // 
@@ -298,7 +305,7 @@
             this.genreCheckLstbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.genreCheckLstbox.FormattingEnabled = true;
             this.genreCheckLstbox.HorizontalScrollbar = true;
-            this.genreCheckLstbox.Location = new System.Drawing.Point(481, 133);
+            this.genreCheckLstbox.Location = new System.Drawing.Point(396, 136);
             this.genreCheckLstbox.MultiColumn = true;
             this.genreCheckLstbox.Name = "genreCheckLstbox";
             this.genreCheckLstbox.Size = new System.Drawing.Size(227, 72);
@@ -309,7 +316,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(305, 22);
+            this.label4.Location = new System.Drawing.Point(220, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 25);
             this.label4.TabIndex = 3;
@@ -319,7 +326,7 @@
             // 
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.Location = new System.Drawing.Point(305, 143);
+            this.label.Location = new System.Drawing.Point(220, 146);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(89, 25);
             this.label.TabIndex = 25;
@@ -329,7 +336,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(718, 22);
+            this.label5.Location = new System.Drawing.Point(541, 21);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(144, 25);
             this.label5.TabIndex = 4;
@@ -340,7 +347,7 @@
             this.endDateDTimePicker.CustomFormat = "dd/MM/yyyy";
             this.endDateDTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.endDateDTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.endDateDTimePicker.Location = new System.Drawing.Point(481, 98);
+            this.endDateDTimePicker.Location = new System.Drawing.Point(396, 101);
             this.endDateDTimePicker.Name = "endDateDTimePicker";
             this.endDateDTimePicker.Size = new System.Drawing.Size(115, 22);
             this.endDateDTimePicker.TabIndex = 23;
@@ -350,7 +357,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(305, 60);
+            this.label6.Location = new System.Drawing.Point(220, 63);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(166, 25);
             this.label6.TabIndex = 5;
@@ -361,7 +368,7 @@
             this.startDateDTimePicker.CustomFormat = "dd/MM/yyyy";
             this.startDateDTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startDateDTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.startDateDTimePicker.Location = new System.Drawing.Point(481, 56);
+            this.startDateDTimePicker.Location = new System.Drawing.Point(396, 59);
             this.startDateDTimePicker.Name = "startDateDTimePicker";
             this.startDateDTimePicker.Size = new System.Drawing.Size(115, 22);
             this.startDateDTimePicker.TabIndex = 22;
@@ -371,7 +378,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(305, 102);
+            this.label7.Location = new System.Drawing.Point(220, 105);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(144, 25);
             this.label7.TabIndex = 6;
@@ -382,7 +389,7 @@
             this.filmDesRtxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.filmDesRtxb.Location = new System.Drawing.Point(121, 110);
             this.filmDesRtxb.Name = "filmDesRtxb";
-            this.filmDesRtxb.Size = new System.Drawing.Size(161, 58);
+            this.filmDesRtxb.Size = new System.Drawing.Size(83, 58);
             this.filmDesRtxb.TabIndex = 19;
             this.filmDesRtxb.Text = "";
             this.filmDesRtxb.TextChanged += new System.EventHandler(this.OnTextChange);
@@ -392,16 +399,16 @@
             this.filmIdTxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.filmIdTxb.Location = new System.Drawing.Point(121, 27);
             this.filmIdTxb.Name = "filmIdTxb";
-            this.filmIdTxb.Size = new System.Drawing.Size(161, 22);
+            this.filmIdTxb.Size = new System.Drawing.Size(83, 22);
             this.filmIdTxb.TabIndex = 7;
             this.filmIdTxb.TextChanged += new System.EventHandler(this.OnTextChange);
             // 
             // studioFilmTxb
             // 
             this.studioFilmTxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.studioFilmTxb.Location = new System.Drawing.Point(864, 106);
+            this.studioFilmTxb.Location = new System.Drawing.Point(687, 105);
             this.studioFilmTxb.Name = "studioFilmTxb";
-            this.studioFilmTxb.Size = new System.Drawing.Size(129, 22);
+            this.studioFilmTxb.Size = new System.Drawing.Size(69, 22);
             this.studioFilmTxb.TabIndex = 18;
             this.studioFilmTxb.TextChanged += new System.EventHandler(this.OnTextChange);
             // 
@@ -410,7 +417,7 @@
             this.filmNameTxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.filmNameTxb.Location = new System.Drawing.Point(121, 75);
             this.filmNameTxb.Name = "filmNameTxb";
-            this.filmNameTxb.Size = new System.Drawing.Size(161, 22);
+            this.filmNameTxb.Size = new System.Drawing.Size(83, 22);
             this.filmNameTxb.TabIndex = 8;
             this.filmNameTxb.TextChanged += new System.EventHandler(this.OnTextChange);
             // 
@@ -418,7 +425,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(718, 101);
+            this.label9.Location = new System.Drawing.Point(541, 100);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(103, 25);
             this.label9.TabIndex = 17;
@@ -427,7 +434,7 @@
             // totalFilmTimeTxb
             // 
             this.totalFilmTimeTxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalFilmTimeTxb.Location = new System.Drawing.Point(481, 18);
+            this.totalFilmTimeTxb.Location = new System.Drawing.Point(396, 21);
             this.totalFilmTimeTxb.Name = "totalFilmTimeTxb";
             this.totalFilmTimeTxb.Size = new System.Drawing.Size(81, 22);
             this.totalFilmTimeTxb.TabIndex = 10;
@@ -436,18 +443,18 @@
             // directorTxb
             // 
             this.directorTxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.directorTxb.Location = new System.Drawing.Point(864, 66);
+            this.directorTxb.Location = new System.Drawing.Point(687, 65);
             this.directorTxb.Name = "directorTxb";
-            this.directorTxb.Size = new System.Drawing.Size(129, 22);
+            this.directorTxb.Size = new System.Drawing.Size(69, 22);
             this.directorTxb.TabIndex = 16;
             this.directorTxb.TextChanged += new System.EventHandler(this.OnTextChange);
             // 
             // yearTxb
             // 
             this.yearTxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.yearTxb.Location = new System.Drawing.Point(864, 27);
+            this.yearTxb.Location = new System.Drawing.Point(687, 26);
             this.yearTxb.Name = "yearTxb";
-            this.yearTxb.Size = new System.Drawing.Size(129, 22);
+            this.yearTxb.Size = new System.Drawing.Size(69, 22);
             this.yearTxb.TabIndex = 14;
             this.yearTxb.TextChanged += new System.EventHandler(this.OnTextChange);
             // 
@@ -455,7 +462,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(718, 60);
+            this.label8.Location = new System.Drawing.Point(541, 59);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(98, 25);
             this.label8.TabIndex = 15;
@@ -541,6 +548,58 @@
             this.functionButtonPnl.Size = new System.Drawing.Size(149, 384);
             this.functionButtonPnl.TabIndex = 8;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.searchBtn);
+            this.groupBox2.Controls.Add(this.searchTxb);
+            this.groupBox2.Controls.Add(this.propertySearchCbx);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(799, 42);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(221, 147);
+            this.groupBox2.TabIndex = 28;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Tìm kiếm";
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchBtn.Location = new System.Drawing.Point(23, 103);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(185, 29);
+            this.searchBtn.TabIndex = 3;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseVisualStyleBackColor = false;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
+            // searchTxb
+            // 
+            this.searchTxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTxb.Location = new System.Drawing.Point(23, 68);
+            this.searchTxb.Name = "searchTxb";
+            this.searchTxb.Size = new System.Drawing.Size(185, 29);
+            this.searchTxb.TabIndex = 2;
+            // 
+            // propertySearchCbx
+            // 
+            this.propertySearchCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.propertySearchCbx.FormattingEnabled = true;
+            this.propertySearchCbx.Location = new System.Drawing.Point(111, 28);
+            this.propertySearchCbx.Name = "propertySearchCbx";
+            this.propertySearchCbx.Size = new System.Drawing.Size(97, 26);
+            this.propertySearchCbx.TabIndex = 1;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(16, 31);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(87, 18);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Thuộc tính";
+            // 
             // MovieUControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -559,6 +618,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.functionButtonPnl.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -608,5 +669,10 @@
         private System.Windows.Forms.TextBox directorTxb;
         private System.Windows.Forms.TextBox yearTxb;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button searchBtn;
+        private System.Windows.Forms.TextBox searchTxb;
+        private System.Windows.Forms.ComboBox propertySearchCbx;
+        private System.Windows.Forms.Label label12;
     }
 }

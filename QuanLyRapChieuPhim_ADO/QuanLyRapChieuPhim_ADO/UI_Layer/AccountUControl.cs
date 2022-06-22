@@ -47,6 +47,11 @@ namespace QuanLyRapChieuPhim_ADO.UI_Layer
             {
                 utilities.SetEnableButton(new List<Button>() { editBtn, removeBtn }, false);
             }
+            foreach(DataGridViewColumn dataCol in accountDataGridView.Columns)
+            {
+                propertySearchCbx.Items.Add(dataCol.Name);
+            }
+            propertySearchCbx.SelectedIndex = 0;
         }
         private bool isAddData = false;
         private void addBtn_Click(object sender, EventArgs e)
@@ -153,6 +158,11 @@ namespace QuanLyRapChieuPhim_ADO.UI_Layer
         }
         private void accountTypeCbx_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            accountDataGridView.DataSource = BLCommon.Search(BLAccount.GetData(), propertySearchCbx.SelectedIndex, searchTxb.Text);
         }
     }
 }

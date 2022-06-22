@@ -44,10 +44,16 @@
             this.genreDataGridView = new System.Windows.Forms.DataGridView();
             this.MaTheLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenTheLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.searchBtn = new System.Windows.Forms.Button();
+            this.searchTxb = new System.Windows.Forms.TextBox();
+            this.propertySearchCbx = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.functionButtonPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.genreDataGridView)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // removeBtn
@@ -86,6 +92,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
@@ -221,6 +228,58 @@
             this.TenTheLoai.ReadOnly = true;
             this.TenTheLoai.Width = 420;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.searchBtn);
+            this.groupBox2.Controls.Add(this.searchTxb);
+            this.groupBox2.Controls.Add(this.propertySearchCbx);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(524, 6);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(265, 147);
+            this.groupBox2.TabIndex = 26;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Tìm kiếm";
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchBtn.Location = new System.Drawing.Point(43, 103);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(185, 29);
+            this.searchBtn.TabIndex = 3;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseVisualStyleBackColor = false;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
+            // searchTxb
+            // 
+            this.searchTxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTxb.Location = new System.Drawing.Point(43, 68);
+            this.searchTxb.Name = "searchTxb";
+            this.searchTxb.Size = new System.Drawing.Size(185, 29);
+            this.searchTxb.TabIndex = 2;
+            // 
+            // propertySearchCbx
+            // 
+            this.propertySearchCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.propertySearchCbx.FormattingEnabled = true;
+            this.propertySearchCbx.Location = new System.Drawing.Point(111, 28);
+            this.propertySearchCbx.Name = "propertySearchCbx";
+            this.propertySearchCbx.Size = new System.Drawing.Size(148, 26);
+            this.propertySearchCbx.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 18);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Thuộc tính";
+            // 
             // GenreUControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,6 +298,8 @@
             this.groupBox1.PerformLayout();
             this.functionButtonPnl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.genreDataGridView)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -261,5 +322,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaTheLoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenTheLoai;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button searchBtn;
+        private System.Windows.Forms.TextBox searchTxb;
+        private System.Windows.Forms.ComboBox propertySearchCbx;
+        private System.Windows.Forms.Label label2;
     }
 }

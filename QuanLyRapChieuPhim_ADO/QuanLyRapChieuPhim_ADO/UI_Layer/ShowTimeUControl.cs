@@ -44,6 +44,11 @@ namespace QuanLyRapChieuPhim_ADO.UI_Layer
             {
                 utilities.SetEnableButton(new List<Button>() { editBtn, removeBtn }, false);
             }
+            foreach (DataGridViewColumn dataCol in showTimeDataGridView.Columns)
+            {
+                propertySearchCbx.Items.Add(dataCol.Name);
+            }
+            propertySearchCbx.SelectedIndex = 0;
         }
         private void CheckChange()
         {
@@ -200,6 +205,11 @@ namespace QuanLyRapChieuPhim_ADO.UI_Layer
         private void showTimeTimeDtimePicker_ValueChanged(object sender, EventArgs e)
         {
             CheckChange();
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            showTimeDataGridView.DataSource = BLCommon.Search(BLShowTime.GetData(), propertySearchCbx.SelectedIndex, searchTxb.Text);
         }
     }
 }

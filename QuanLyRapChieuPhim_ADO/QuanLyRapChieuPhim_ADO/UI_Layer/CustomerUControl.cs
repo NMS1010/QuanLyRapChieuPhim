@@ -49,6 +49,11 @@ namespace QuanLyRapChieuPhim_ADO.UI_Layer
             {
                 utilities.SetEnableButton(new List<Button>() { editBtn, removeBtn }, false);
             }
+            foreach (DataGridViewColumn dataCol in customerDataGridView.Columns)
+            {
+                propertySearchCbx.Items.Add(dataCol.Name);
+            }
+            propertySearchCbx.SelectedIndex = 0;
         }
         private bool isAddData = false;
         private void addBtn_Click(object sender, EventArgs e)
@@ -167,6 +172,11 @@ namespace QuanLyRapChieuPhim_ADO.UI_Layer
         private void sexCbx_SelectedIndexChanged(object sender, EventArgs e)
         {
             CheckChange();
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            customerDataGridView.DataSource = BLCommon.Search(BLCustomer.GetData(), propertySearchCbx.SelectedIndex, searchTxb.Text);
         }
     }
 }

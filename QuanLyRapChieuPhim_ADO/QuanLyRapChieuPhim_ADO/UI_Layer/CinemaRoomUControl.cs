@@ -42,6 +42,11 @@ namespace QuanLyRapChieuPhim_ADO.UI_Layer
             cinemaRoomStatusCbx.SelectedIndex = 0;
             if (screenNameCinemaRoomCbx.Items.Count > 0)
                 screenNameCinemaRoomCbx.SelectedIndex = 0;
+            foreach (DataGridViewColumn dataCol in cinemaRoomDataGridView.Columns)
+            {
+                propertySearchCbx.Items.Add(dataCol.Name);
+            }
+            propertySearchCbx.SelectedIndex = 0;
         }
         private bool isAddData = false;
         private void addBtn_Click(object sender, EventArgs e)
@@ -189,6 +194,11 @@ namespace QuanLyRapChieuPhim_ADO.UI_Layer
         private void screenNameCinemaRoomCbx_SelectedIndexChanged(object sender, EventArgs e)
         {
             CheckChange();
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            cinemaRoomDataGridView.DataSource = BLCommon.Search(BLCinemaRoom.GetData(), propertySearchCbx.SelectedIndex, searchTxb.Text);
         }
     }
 }

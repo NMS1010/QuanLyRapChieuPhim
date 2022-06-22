@@ -31,6 +31,11 @@ namespace QuanLyRapChieuPhim_ADO.UI_Layer
             {
                 utilities.SetEnableButton(new List<Button>() { editBtn, removeBtn }, false);
             }
+            foreach (DataGridViewColumn dataCol in genreDataGridView.Columns)
+            {
+                propertySearchCbx.Items.Add(dataCol.Name);
+            }
+            propertySearchCbx.SelectedIndex = 0;
         }
         private bool isAddData = false;
         private void addBtn_Click(object sender, EventArgs e)
@@ -141,5 +146,9 @@ namespace QuanLyRapChieuPhim_ADO.UI_Layer
             utilities.CellClick(cancelBtn, removeBtn, editBtn, saveBtn);
         }
 
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            genreDataGridView.DataSource = BLCommon.Search(BLGenre.GetData(), propertySearchCbx.SelectedIndex, searchTxb.Text);
+        }
     }
 }

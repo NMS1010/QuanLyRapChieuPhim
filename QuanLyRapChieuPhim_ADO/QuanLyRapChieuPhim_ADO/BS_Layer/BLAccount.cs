@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QuanLyRapChieuPhim_ADO.BS_Layer
 {
@@ -46,5 +47,7 @@ namespace QuanLyRapChieuPhim_ADO.BS_Layer
             string command = $"delete from {tableName} where TenTaiKhoan = '{userName}'";
             return DataProvider.ExecuteNonQuery(command, ref err);
         }
+
+        
     }
 }

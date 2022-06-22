@@ -47,10 +47,16 @@
             this.screenIdTxb = new System.Windows.Forms.TextBox();
             this.nameScreenFormatTxb = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.searchBtn = new System.Windows.Forms.Button();
+            this.searchTxb = new System.Windows.Forms.TextBox();
+            this.propertySearchCbx = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.screenDataGridView)).BeginInit();
             this.functionButtonPnl.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // screenDataGridView
@@ -185,6 +191,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
@@ -254,6 +261,58 @@
             this.label5.TabIndex = 18;
             this.label5.Text = "Tên định dạng";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.searchBtn);
+            this.groupBox2.Controls.Add(this.searchTxb);
+            this.groupBox2.Controls.Add(this.propertySearchCbx);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(505, 8);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(263, 147);
+            this.groupBox2.TabIndex = 27;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Tìm kiếm";
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchBtn.Location = new System.Drawing.Point(43, 103);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(185, 29);
+            this.searchBtn.TabIndex = 3;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseVisualStyleBackColor = false;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
+            // searchTxb
+            // 
+            this.searchTxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTxb.Location = new System.Drawing.Point(43, 68);
+            this.searchTxb.Name = "searchTxb";
+            this.searchTxb.Size = new System.Drawing.Size(185, 29);
+            this.searchTxb.TabIndex = 2;
+            // 
+            // propertySearchCbx
+            // 
+            this.propertySearchCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.propertySearchCbx.FormattingEnabled = true;
+            this.propertySearchCbx.Location = new System.Drawing.Point(111, 28);
+            this.propertySearchCbx.Name = "propertySearchCbx";
+            this.propertySearchCbx.Size = new System.Drawing.Size(148, 26);
+            this.propertySearchCbx.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(16, 31);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(87, 18);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Thuộc tính";
+            // 
             // ScreenUControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,6 +331,8 @@
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -296,5 +357,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDinhDang;
         private System.Windows.Forms.DataGridViewTextBoxColumn GiaVe;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button searchBtn;
+        private System.Windows.Forms.TextBox searchTxb;
+        private System.Windows.Forms.ComboBox propertySearchCbx;
+        private System.Windows.Forms.Label label8;
     }
 }

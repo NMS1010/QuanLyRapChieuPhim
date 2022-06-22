@@ -50,10 +50,16 @@
             this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoaiTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.propertySearchCbx = new System.Windows.Forms.ComboBox();
+            this.searchTxb = new System.Windows.Forms.TextBox();
+            this.searchBtn = new System.Windows.Forms.Button();
             this.functionButtonPnl.SuspendLayout();
             this.panel1.SuspendLayout();
             this.accountInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountDataGridView)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // functionButtonPnl
@@ -139,6 +145,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.accountInfo);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
@@ -158,7 +165,7 @@
             this.accountInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accountInfo.Location = new System.Drawing.Point(17, 16);
             this.accountInfo.Name = "accountInfo";
-            this.accountInfo.Size = new System.Drawing.Size(831, 148);
+            this.accountInfo.Size = new System.Drawing.Size(686, 147);
             this.accountInfo.TabIndex = 24;
             this.accountInfo.TabStop = false;
             this.accountInfo.Text = "Thông tin tài khoản";
@@ -295,6 +302,58 @@
             this.LoaiTaiKhoan.ReadOnly = true;
             this.LoaiTaiKhoan.Width = 200;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.searchBtn);
+            this.groupBox1.Controls.Add(this.searchTxb);
+            this.groupBox1.Controls.Add(this.propertySearchCbx);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(735, 16);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(265, 147);
+            this.groupBox1.TabIndex = 25;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tìm kiếm";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 18);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Thuộc tính";
+            // 
+            // propertySearchCbx
+            // 
+            this.propertySearchCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.propertySearchCbx.FormattingEnabled = true;
+            this.propertySearchCbx.Location = new System.Drawing.Point(111, 28);
+            this.propertySearchCbx.Name = "propertySearchCbx";
+            this.propertySearchCbx.Size = new System.Drawing.Size(148, 26);
+            this.propertySearchCbx.TabIndex = 1;
+            // 
+            // searchTxb
+            // 
+            this.searchTxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTxb.Location = new System.Drawing.Point(43, 68);
+            this.searchTxb.Name = "searchTxb";
+            this.searchTxb.Size = new System.Drawing.Size(185, 29);
+            this.searchTxb.TabIndex = 2;
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchBtn.Location = new System.Drawing.Point(43, 103);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(185, 29);
+            this.searchBtn.TabIndex = 3;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseVisualStyleBackColor = false;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
             // AccountUControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,6 +371,8 @@
             this.accountInfo.ResumeLayout(false);
             this.accountInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountDataGridView)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -339,5 +400,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNhanVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn LoaiTaiKhoan;
         private System.Windows.Forms.GroupBox accountInfo;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox propertySearchCbx;
+        private System.Windows.Forms.Button searchBtn;
+        private System.Windows.Forms.TextBox searchTxb;
     }
 }
